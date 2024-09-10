@@ -16,32 +16,54 @@
             overflow-x: hidden;
         }
 
-        header {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
+        /* Updated Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    display: flex; /* Added */
+    align-items: center; /* Added */
+    justify-content: center; /* Added */
+    flex-direction: column; /* Added */
+}
 
-        header img {
-            width: 100px;
-            border-radius: 50%;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
+header img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Updated to remove absolute positioning */
+}
 
-        header h1 {
-            margin: 10px 0 0;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px #000;
-        }
+header h1 {
+    margin: 10px 0 0;
+    font-size: 2em; /* Adjusted font size for responsiveness */
+    text-shadow: 2px 2px 4px #000;
+}
 
-        header p {
-            margin-top: 5px;
-            font-size: 1.2em;
-            color: #dcdcdc;
-        }
+header p {
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: #dcdcdc;
+}
+
+/* Media Queries for Small Devices */
+@media (max-width: 600px) {
+    header {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    
+    header img {
+        width: 80px; /* Resize the logo */
+        margin-bottom: 5px;
+    }
+    
+    header h1 {
+        font-size: 1.8em; /* Adjust font size */
+    }
+    
+    header p {
+        font-size: 1em; /* Adjust font size */
+    }
+}
 
         .intro-image {
             width: 100%;
@@ -469,10 +491,10 @@ footer p {
                     </div>
         
                     <div class="image-card">
-                        <img src="https://i.imgur.com/dLcVSCn.jpeg" alt="Stephen">
+                        <img src="https://i.imgur.com/Q070NZI.jpeg" alt="Kimens">
                         <div class="image-overlay">
-                            <h3>Akomeah Junior</h3>
-                            <p>Management</p>
+                            <h3>Kimens</h3>
+                            <p>Project Management</p>
                             <p>Konongo Odumase SHS</p>
                         </div>
                     </div>
@@ -573,7 +595,7 @@ footer p {
                     </a>
                 </div>
                 <p>&copy; 2024 H20HopeHorizon. All rights reserved.</p>
-                <p>Designed by <em>Cephas Bonsu</em>.</p>
+                <p>Designed by [Your Name].</p>
             </footer>
             
         
