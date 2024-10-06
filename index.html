@@ -213,13 +213,152 @@
             padding: 8px;
         }
     }
+    .check-answer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.check-answer input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+    accent-color: #2980b9; /* Blue accent */
+    transition: transform 0.2s ease-in-out;
+}
+
+.check-answer input[type="checkbox"]:hover {
+    transform: scale(1.7); /* Enlarge checkbox on hover */
+}
+
+.check-answer span {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+#feedback-message {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#feedback-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background-color: #f4f4f4;
+}
+
+.feedback-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label {
+    font-weight: bold;
+}
+#site-footer {
+    background: linear-gradient(135deg, #0056b3, #00aaff); /* Gradient background */
+    color: #FFFFFF; /* White text */
+    padding: 20px 10px; /* Reduced padding for compactness */
+    text-align: center;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the content */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+}
+
+.footer-text {
+    margin-bottom: 10px; /* Reduced space between text and links */
+}
+
+.tagline {
+    font-size: 20px; /* Slightly smaller font size */
+    font-weight: bold; /* Bold font weight */
+    color: #ffffff; /* White color */
+    margin-bottom: 3px; /* Space below tagline */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+.subtitle {
+    font-size: 16px; /* Subtitle font size */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 10px; /* Reduced margin */
+    color: #ffffff; /* White color */
+}
+
+.footer-content p {
+    font-size: 14px; /* Slightly smaller font size */
+    margin: 3px 0; /* Reduced margin for spacing */
+    color: #ffffff; /* White text for contrast */
+}
+
+.footer-note {
+    margin-top: 5px; /* Reduced margin on top */
+    font-size: 12px; /* Smaller font size for note */
+    color: #f0f0f0; /* Light gray color for note */
+    border-top: 1px solid #ffffff; /* White border on top */
+    padding-top: 5px; /* Reduced padding */
+    width: 100%; /* Full width */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+    
+    .tagline {
+        font-size: 18px; /* Slightly smaller on small screens */
+    }
+
+    .subtitle {
+        font-size: 14px; /* Slightly smaller on small screens */
+    }
+}
+
+
     
     </style>
 </head>
 <body>
     <!-- Background Image -->
     <div class="background-img">
-        <img src="https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Background Image" class="background-img">
+        <img src="https://i.imgur.com/EzdOmJr.jpeg" alt="Background Image" class="background-img">
     </div>
 
     <!-- Profile Section -->
@@ -227,7 +366,7 @@
         <img src="https://i.imgur.com/qrfF8Cn.jpeg" alt="Profile Picture" class="profile-pic">
         <h1>THE CKODON FOUNDATION</h1>
         <h2>DIGITAL SAT PRACTICE TEST</h2>
-        <p> platform to practice SAT questions, enhancing your problem-solving skills and providing access to additional practice tests.</p>
+        <p> A Platform to practice SAT questions, enhancing your problem-solving skills and providing access to additional practice tests.</p>
     </div>
 
   <!-- Navigation Bar -->
@@ -243,23 +382,557 @@
   
   </header>
 
-  <!-- Transition Section -->
   <section id="transition">
     <h2>Transitions</h2>
     <div class="question-container">
-      <p>1. Most of the planets that have been discovered outside our solar system orbit G-type stars, like our Sun. In 2014, ______ researchers identified a planet orbiting KELT-9, a B-type star...</p>
+        <p>1. Samuel Coleridge-Taylor was a prominent classical music composer from England who toured the US three times in the
+            early 1900s. The child of a West African father and an English mother, Coleridge-Taylor emphasized his mixed-race
+            ancestry. For example, he referred to himself as Anglo-African. ______ he incorporated the sounds of traditional African
+            music into his classical music compositions.
+            Which choice completes the text with the most logical transition?
+        </p>
+        <div class="options">
+            <label><input type="radio" name="q1" onclick="storeAnswer(this, 'q1', 'A')"> A. In addition,</label><br>
+            <label><input type="radio" name="q1" onclick="storeAnswer(this, 'q1', 'B')"> B. Actually,</label><br>
+            <label><input type="radio" name="q1" onclick="storeAnswer(this, 'q1', 'C')"> C. However,</label><br>
+            <label><input type="radio" name="q1" onclick="storeAnswer(this, 'q1', 'D')"> D. Regardless,</label>
+        </div>
+        <!-- Checkbox to verify answer -->
+        <div class="check-answer">
+            <label><input type="checkbox" id="check-answer-box-q1" onclick="checkAnswer(this, 'q1', 'A')"> <span>✅ Check Answer</span></label>
+        </div>
+        <!-- Feedback message -->
+        <p id="feedback-message-q1" style="display: none;"></p>
+        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+        <div class="explanation" style="display:none;">
+            <p>Choice A is the best answer. “In addition” logically signals that the detail in this sentence—that Coleridge-Taylor included
+              traditional African music in his classical compositions—adds to the information in the previous sentence. Specifically, the
+              previous sentence indicates one way in which Coleridge-Taylor emphasized his mixed-race ancestry, and the claim that
+              follows indicates a second, additional way</p>
+        </div>
+    </div>
+</section>
+<section id="transition">
+  <div class="question-container">
+      <p>2.  In her poetry collection Thomas and Beulah, Rita Dove interweaves the titular characters’ personal stories with broader
+        historical narratives. She places Thomas’s journey from the American South to the Midwest in the early 1900s within the
+        larger context of the Great Migration. ______ Dove sets events from Beulah’s personal life against the backdrop of the US
+        Civil Rights Movement.
+        Which choice completes the text with the most logical transition?
+      </p>
       <div class="options">
-        <label><input type="radio" name="q1" onclick="checkAnswer(this, 'B')"> A. likewise</label><br>
-        <label><input type="radio" name="q1" onclick="checkAnswer(this, 'B')"> B. however</label><br>
-        <label><input type="radio" name="q1" onclick="checkAnswer(this, 'B')"> C. therefore</label><br>
-        <label><input type="radio" name="q1" onclick="checkAnswer(this, 'B')"> D. for example</label>
+          <label><input type="radio" name="q2" onclick="storeAnswer(this, 'q2', 'A')"> A. Specifically,</label><br>
+          <label><input type="radio" name="q2" onclick="storeAnswer(this, 'q2', 'B')"> B. Thus,</label><br>
+          <label><input type="radio" name="q2" onclick="storeAnswer(this, 'q2', 'C')"> C. Regardless,</label><br>
+          <label><input type="radio" name="q2" onclick="storeAnswer(this, 'q2', 'D')"> D. Similarly,</label>
       </div>
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+          <label><input type="checkbox" id="check-answer-box-q2" onclick="checkAnswer(this, 'q2', 'D')"> <span>✅ Check Answer</span></label>
+      </div>
+      <!-- Feedback message -->
+      <p id="feedback-message-q2" style="display: none;"></p>
       <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
       <div class="explanation" style="display:none;">
-        <p>Explanation: The word “however” logically signals that the information in this sentence contrasts with the previous sentence about planets orbiting G-type stars.</p>
+          <p>Choice D is the best answer. “Similarly” logically signals that the information in the sentence—that Dove situates Beulah’s
+            life in the context of the US Civil Rights Movement—is similar to the previous information about Thomas and the Great
+            Migration. Both sentences support the first sentence’s claim that Dove portrays her characters in the context of broader
+            historical narratives. 
+            Choice D is the best answer. “Similarly” logically signals that the information in the sentence—that Dove situates Beulah’s
+    life in the context of the US Civil Rights Movement—is similar to the previous information about Thomas and the Great
+    Migration. Both sentences support the first sentence’s claim that Dove portrays her characters in the context of broader
+    historical narratives.</p>
+      </div>
+  </div>
+</section>
+
+</section>
+<section id="transition">
+  <div class="question-container">
+      <p>3. In a heated debate in biogeography, the field is divided between dispersalists and vicariancists. ______ there are those
+        who argue that dispersal is the most crucial determining factor in a species’ distribution, and those who insist that
+        vicariance (separation due to geographic barriers) is. Biogeographer Isabel Sanmartín counts herself among neither.
+        Which choice completes the text with the most logical transition?
+      </p>
+      <div class="options">
+          <label><input type="radio" name="q3" onclick="storeAnswer(this, 'q3', 'A')"> A. Furthermore,</label><br>
+          <label><input type="radio" name="q3" onclick="storeAnswer(this, 'q3', 'B')"> B. By contrast,</label><br>
+          <label><input type="radio" name="q3" onclick="storeAnswer(this, 'q3', 'C')"> C. Similarly,</label><br>
+          <label><input type="radio" name="q3" onclick="storeAnswer(this, 'q3', 'D')"> D. That is,</label>
+      </div>
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+          <label><input type="checkbox" id="check-answer-box-q3" onclick="checkAnswer(this, 'q3', 'D')"> <span>✅ Check Answer</span></label>
+      </div>
+      <!-- Feedback message -->
+      <p id="feedback-message-q3" style="display: none;"></p>
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+          <p>Choice D is the best answer. “That is” logically signals that this sentence clarifies the terms of the scientific debate
+            introduced in the previous sentence by explaining the difference between dispersalists and vicariancists.</div>
+  </div>
+</section>
+</section>
+<section id="transition">
+  <div class="question-container">
+      <p>4.Most of the planets that have been discovered outside our solar system orbit G-type stars, like our Sun. In 2014, ______
+        researchers identified a planet orbiting KELT-9, a B-type star more than twice as massive and nearly twice as hot as the
+        Sun. Called KELT-9b, it is one of the hottest planets ever discovered.
+        Which choice completes the text with the most logical transition?
+      </p>
+      <div class="options">
+          <label><input type="radio" name="q4" onclick="storeAnswer(this, 'q4', 'A')"> A. Likewise,</label><br>
+          <label><input type="radio" name="q4" onclick="storeAnswer(this, 'q4', 'B')"> B. However,</label><br>
+          <label><input type="radio" name="q4" onclick="storeAnswer(this, 'q4', 'C')"> C. Therefore,</label><br>
+          <label><input type="radio" name="q4" onclick="storeAnswer(this, 'q4', 'D')"> D. For example,</label>
+      </div>
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+          <label><input type="checkbox" id="check-answer-box-q4" onclick="checkAnswer(this, 'q4', 'B')"> <span>✅ Check Answer</span></label>
+      </div>
+      <!-- Feedback message -->
+      <p id="feedback-message-q4" style="display: none;"></p>
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+          <p>Choice D is the best answer. “That is” logically signals that this sentence clarifies the terms of the scientific debate
+            introduced in the previous sentence by explaining the difference between dispersalists and vicariancists.</div>
+  </div>
+</section>
+<section id="transition">
+    <div class="question-container">
+        <p>5.In 1815, while in exile in Jamaica, Venezuelan revolutionary Simón Bolívar penned a letter praising England’s republican
+            government and expressing hope that Latin American nations seeking independence from Spain might achieve
+            something similar. The letter was addressed to a local merchant, Henry Cullen; ______ though, Bolívar’s goal was to
+            persuade political leaders from England and Europe to support his cause.
+            Which choice completes the text with the most logical transition?
+            
+        </p>
+        <div class="options">
+            <label><input type="radio" name="q5" onclick="storeAnswer(this, 'q5', 'A')"> A. Additionally,</label><br>
+            <label><input type="radio" name="q5" onclick="storeAnswer(this, 'q5', 'B')"> B. Ultimately,</label><br>
+            <label><input type="radio" name="q5" onclick="storeAnswer(this, 'q5', 'C')"> C. Accordingly,</label><br>
+            <label><input type="radio" name="q5" onclick="storeAnswer(this, 'q5', 'D')"> D. Consequently,</label>
+        </div>
+        <!-- Checkbox to verify answer -->
+        <div class="check-answer">
+            <label><input type="checkbox" id="check-answer-box-q5" onclick="checkAnswer(this, 'q5', 'B')"> <span>✅ Check Answer</span></label>
+        </div>
+        <!-- Feedback message -->
+        <p id="feedback-message-q5" style="display: none;"></p>
+        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+        <div class="explanation" style="display:none;">
+            <p>Choice B is the best answer. “Ultimately” means “in the long run” or “at the highest level.” Although Bolívar wrote to a local
+                merchant, his ultimate goal was to send a message to political leaders in Europe. Therefore, “ultimately” fits perfectly in
+                this context.
+                </div>
+    </div>
+  </section>
+  <section id="transition">
+    <div class="question-container">
+        <p>6.The Babylonian king Hammurabi achieved much during his forty-year reign. He conquered all of Mesopotamia and built
+            Babylon into one of the most powerful cities of the ancient world. Today, ______ he is mainly remembered for a code of
+            laws inscribed on a seven-foot-tall block of stone: the Code of Hammurabi.
+            
+            Which choice completes the text with the most logical transition?
+            </p>
+        <div class="options">
+            <label><input type="radio" name="q6" onclick="storeAnswer(this, 'q6', 'A')"> A. Therefore,</label><br>
+            <label><input type="radio" name="q6" onclick="storeAnswer(this, 'q6', 'B')"> B. Likewise,</label><br>
+            <label><input type="radio" name="q6" onclick="storeAnswer(this, 'q6', 'C')"> C. However,</label><br>
+            <label><input type="radio" name="q6" onclick="storeAnswer(this, 'q6', 'D')"> D. For instance,</label>
+        </div>
+        <!-- Checkbox to verify answer -->
+        <div class="check-answer">
+            <label><input type="checkbox" id="check-answer-box-q6" onclick="checkAnswer(this, 'q6', 'C')"> <span>✅ Check Answer</span></label>
+        </div>
+        <!-- Feedback message -->
+        <p id="feedback-message-q6" style="display: none;"></p>
+        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+        <div class="explanation" style="display:none;">
+            <p>Choice C is the best answer. “However” logically signals that the information in this sentence—that Hammurabi is mainly
+                remembered for just a single achievement, the Code of Hammurabi—is contrary to what might be assumed from the
+                previous information about Hammurabi’s many achievements. 
+                </div>
+    </div>
+  </section>
+</section>
+<section id="transition">
+  <div class="question-container">
+      <p>7.  Some members of the US Supreme Court have resisted calls to televise the court’s oral arguments, concerned that the
+        participants would be tempted to perform for the cameras (and thus lower the quality of the discourse). ______ the
+        justices worry that most viewers would not even watch the full deliberations, only short clips that could be misinterpreted
+        and mischaracterized.Which choice completes the text with the most logical transition?
+
+          </p>
+      <div class="options">
+          <label><input type="radio" name="q7" onclick="storeAnswer(this, 'q7', 'A')"> A. However,</label><br>
+          <label><input type="radio" name="q7" onclick="storeAnswer(this, 'q7', 'B')"> B. Additionally,</label><br>
+          <label><input type="radio" name="q7" onclick="storeAnswer(this, 'q7', 'C')"> C. In comparison,</label><br>
+          <label><input type="radio" name="q7" onclick="storeAnswer(this, 'q7', 'D')"> D. For example</label>
+      </div>
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+          <label><input type="checkbox" id="check-answer-box-q7" onclick="checkAnswer(this, 'q7', 'B')"> <span>✅ Check Answer</span></label>
+      </div>
+      <!-- Feedback message -->
+      <p id="feedback-message-q7" style="display: none;"></p>
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+          <p>Choice B is the best answer. “Additionally” logically signals that the claim in this sentence—that some Supreme Court
+            justices worry that viewers (of televised court arguments) would watch only short, misleading clips—adds to the
+            information in the previous sentence. Specifically, the previous sentence indicates one concern raised by those opposed
+            to televising the court’s oral arguments, and the claim that follows indicates a second, additional concern.</p>           
+              </div>
+  </div>
+</section>
+</section>
+<section id="transition">
+  <div class="question-container">
+      <p>8.Award-winning travel writer Linda Watanabe McFerrin considers the background research she conducts on destinations
+        featured in her travel books to be its own reward. ______ McFerrin admits to finding the research phase of her work just as
+        fascinating and engaging as exploring a location in person.
+        Which choice completes the text with the most logical transition?</p>
+      <div class="options">
+          <label><input type="radio" name="q8" onclick="storeAnswer(this, 'q8', 'A')"> A. By contrast,</label><br>
+          <label><input type="radio" name="q8" onclick="storeAnswer(this, 'q8', 'B')"> B. Likewise,</label><br>
+          <label><input type="radio" name="q8" onclick="storeAnswer(this, 'q8', 'C')"> C. Besides,</label><br>
+          <label><input type="radio" name="q8" onclick="storeAnswer(this, 'q8', 'D')"> D. In fact,</label>
+      </div>
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+          <label><input type="checkbox" id="check-answer-box-q8" onclick="checkAnswer(this,'q8', 'D')"> <span>✅ Check Answer</span></label>
+      </div> 
+      <!-- Feedback message -->
+      <p id="feedback-message-q8" style="display: none;"></p>
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+          <p>Choice D is the best answer. “In fact” logically signals that the information in this sentence—that McFerrin finds the
+            research phase of her work to be just as fascinating as travel—emphasizes and elaborates on the previous sentence’s
+            point that McFerrin regards background research as a rewarding activity.</p>           
+              </div>
+  </div>
+</section>
+</section>
+<section id="transition">
+  <div class="question-container">
+      <p>9.In 1873, Spanish scientist Santiago Ramón y Cajal observed that brain fibers have distinct boundaries with clear end
+        points, a finding that went against earlier assumptions about the brain. ______ scientists had assumed that the brain was
+        a continuous web of fused fibers, not a vast network of distinct, individual cells.
+        Which choice completes the text with the most logical transition?
+ </p>
+      <div class="options">
+          <label><input type="radio" name="q9" onclick="storeAnswer(this, 'q9', 'A')"> A. However,</label><br>
+          <label><input type="radio" name="q9" onclick="storeAnswer(this, 'q9', 'B')"> B. Previously,</label><br>
+          <label><input type="radio" name="q9" onclick="storeAnswer(this, 'q9', 'C')"> C. As a results,</label><br>
+          <label><input type="radio" name="q9" onclick="storeAnswer(this, 'q9', 'D')"> D. Likewise,</label>
+      </div>
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+          <label><input type="checkbox" id="check-answer-box-q9" onclick="checkAnswer(this,'q9', 'B')"> <span>✅ Check Answer</span></label>
+      </div> 
+      <!-- Feedback message -->
+      <p id="feedback-message-q9" style="display: none;"></p>
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+          <p>Choice B is the best answer. “Previously” logically signals that the fused fiber theory came before Ramón y Cajal’s
+            discovery.</p>           
+              </div>
+  </div>
+</section>
+</section>
+<section id="transition">
+  <div class="question-container">
+      <p>10.For years, biologists have experimented with using grime-eating bacteria rather than harsh chemicals to clean artworks,
+        and results have been impressive overall. ______ these bacterial strains—which can metabolize centuries’ worth of oil,
+        glue, dirt, and other surface impurities without creating harmful byproducts—have proven more effective than traditional
+        chemical cleaning methods.
+        Which choice completes the text with the most logical transition?
+ </p>
+ <div class="options">
+    <label><input type="radio" name="q10" onclick="storeAnswer(this, 'q10', 'A')"> A. However,</label><br>
+    <label><input type="radio" name="q10" onclick="storeAnswer(this, 'q10', 'B')"> B. In many cases,</label><br>
+    <label><input type="radio" name="q10" onclick="storeAnswer(this, 'q10', 'C')"> C. As a results,</label><br>
+    <label><input type="radio" name="q10" onclick="storeAnswer(this, 'q10', 'D')"> D. Additionally,</label>
+      
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+          <label><input type="checkbox" id="check-answer-box-q10" onclick="checkAnswer(this,'q10', 'B')"> <span>✅ Check Answer</span></label>
+      </div> 
+      <!-- Feedback message -->
+      <p id="feedback-message-q10" style="display: none;"></p>
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+          <p>Choice B is the best answer. The first sentence makes the claim that using grime-eating bacteria has led to “impressive
+            results.” This sentence supports that claim by describing the specific findings of the biologists’ experimentation. The
+            transition “in many cases” fits the context perfectly.</p>           
+              </div>
+  </div>
+</section>
+<section id="transition">
+    <div class="question-container">
+      <p>11. In 1968, US Congressman John Conyers introduced a bill to establish a national holiday in honor of Dr. Martin Luther King Jr. 
+      The bill didn’t make it to a vote, but Conyers was determined. He teamed up with Shirley Chisholm, the first Black woman to be elected to Congress, 
+      and they resubmitted the bill every session for the next fifteen years. ______ in 1983, the bill passed. 
+      Which choice completes the text with the most logical transition?</p>
+      
+      <div class="options">
+        <label><input type="radio" name="q11" onclick="storeAnswer(this, 'q11', 'A')"> A. Instead,</label><br>
+        <label><input type="radio" name="q11" onclick="storeAnswer(this, 'q11', 'B')"> B. Likewise,</label><br>
+        <label><input type="radio" name="q11" onclick="storeAnswer(this, 'q11', 'C')"> C. Finally,</label><br>
+        <label><input type="radio" name="q11" onclick="storeAnswer(this, 'q11', 'D')"> D. Additionally,</label>
+      </div>
+      
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+        <label><input type="checkbox" id="check-answer-box-q11" onclick="checkAnswer(this, 'q11', 'C')"> <span>✅ Check Answer</span></label>
+      </div> 
+      
+      <!-- Feedback message -->
+      <p id="feedback-message-q11" style="display: none;"></p>
+      
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+        <p>Choice C is the best answer. “Finally” logically signals that the bill passing—following many attempts between 1968 and 1983—is the final, concluding event in the sequence described in the previous sentences.</p>
       </div>
     </div>
   </section>
+  
+  <section id="transition">
+    <div class="question-container">
+      <p>12. It has long been thought that humans first crossed a land bridge into the Americas approximately 13,000 years ago. 
+      ______ based on radiocarbon dating of samples uncovered in Mexico, a research team recently suggested that humans may have arrived more than 30,000 years ago—much earlier than previously thought. 
+      Which choice completes the text with the most logical transition?</p>
+      
+      <div class="options">
+        <label><input type="radio" name="q12" onclick="storeAnswer(this, 'q12', 'A')"> A. As a result,</label><br>
+        <label><input type="radio" name="q12" onclick="storeAnswer(this, 'q12', 'B')"> B. Similarly,</label><br>
+        <label><input type="radio" name="q12" onclick="storeAnswer(this, 'q12', 'C')"> C. However,</label><br>
+        <label><input type="radio" name="q12" onclick="storeAnswer(this, 'q12', 'D')"> D. In conclusion,</label>
+      </div>
+      
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+        <label><input type="checkbox" id="check-answer-box-q12" onclick="checkAnswer(this, 'q12', 'C')"> <span>✅ Check Answer</span></label>
+      </div> 
+      
+      <!-- Feedback message -->
+      <p id="feedback-message-q12" style="display: none;"></p>
+      
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+        <p>Choice C is the best answer. “However” logically signals that the theory discussed in this sentence—that humans may have arrived in the Americas over 30,000 years ago—contrasts with the previously discussed theory that humans arrived around 13,000 years ago.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="transition">
+    <div class="question-container">
+      <p>13. Researchers believe that pieces of hull found off Oregon’s coast are from a Spanish cargo ship that was lost in 1697. 
+      Stories passed down among the area’s Confederated Tribes of Siletz Indians support this belief. 
+      ______ Siletz stories describe how blocks of beeswax, an item the ship had been carrying, began washing ashore after the ship was lost.  
+      Which choice completes the text with the most logical transition?</p>
+      
+      <div class="options">
+        <label><input type="radio" name="q13" onclick="storeAnswer(this, 'q13', 'A')"> A. For this reason,</label><br>
+        <label><input type="radio" name="q13" onclick="storeAnswer(this, 'q13', 'B')"> B. For example,</label><br>
+        <label><input type="radio" name="q13" onclick="storeAnswer(this, 'q13', 'C')"> C. However,</label><br>
+        <label><input type="radio" name="q13" onclick="storeAnswer(this, 'q13', 'D')"> D. Likewise,</label>
+      </div>
+      
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+        <label><input type="checkbox" id="check-answer-box-q13" onclick="checkAnswer(this, 'q13', 'B')"> <span>✅ Check Answer</span></label>
+      </div> 
+      
+      <!-- Feedback message -->
+      <p id="feedback-message-q13" style="display: none;"></p>
+      
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+        <p>Choice B is the best answer. “For example” logically signals that the Siletz beeswax stories mentioned in this sentence are examples consistent with the previous claim that Siletz stories support the shipwreck theory.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="transition">
+    <div class="question-container">
+      <p>14. Alexander Lawrence Posey (1873–1908) varied his focus and tone depending on the genre in which he was writing. 
+      In his poetry, he used heartfelt language to evoke the beauty and peacefulness of his natural surroundings; 
+      in his journalism, ______ he employed humor and satire to comment on political issues affecting his Muskogee Creek community. 
+      Which choice completes the text with the most logical transition?</p>
+      
+      <div class="options">
+        <label><input type="radio" name="q14" onclick="storeAnswer(this, 'q14', 'A')"> A. that is,</label><br>
+        <label><input type="radio" name="q14" onclick="storeAnswer(this, 'q14', 'B')"> B. granted,</label><br>
+        <label><input type="radio" name="q14" onclick="storeAnswer(this, 'q14', 'C')"> C. similarly,</label><br>
+        <label><input type="radio" name="q14" onclick="storeAnswer(this, 'q14', 'D')"> D. by contrast,</label>
+      </div>
+      
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+        <label><input type="checkbox" id="check-answer-box-q14" onclick="checkAnswer(this, 'q14', 'D')"> <span>✅ Check Answer</span></label>
+      </div> 
+      
+      <!-- Feedback message -->
+      <p id="feedback-message-q14" style="display: none;"></p>
+      
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+        <p>Choice D is the best answer. This sentence compares two examples of Posey’s tone: the “heartfelt language” he used in his poetry versus the “humor and satire” he used in his journalism.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="transition">
+    <div class="question-container">
+      <p>15. Geoscientists have long considered Hawaii’s Mauna Loa volcano to be Earth’s largest shield volcano by volume, 
+      measuring approximately 74,000 cubic kilometers. ______ according to a 2020 study by local geoscientist Michael Garcia, 
+      Hawaii’s Pūhāhonu shield volcano is significantly larger, boasting a volume of about 148,000 cubic kilometers. 
+      Which choice completes the text with the most logical transition?</p>
+      
+      <div class="options">
+        <label><input type="radio" name="q15" onclick="storeAnswer(this, 'q15', 'A')"> A. Secondly,</label><br>
+        <label><input type="radio" name="q15" onclick="storeAnswer(this, 'q15', 'B')"> B. Consequently,</label><br>
+        <label><input type="radio" name="q15" onclick="storeAnswer(this, 'q15', 'C')"> C. Moreover,</label><br>
+        <label><input type="radio" name="q15" onclick="storeAnswer(this, 'q15', 'D')"> D. However,</label>
+      </div>
+      
+      <!-- Checkbox to verify answer -->
+      <div class="check-answer">
+        <label><input type="checkbox" id="check-answer-box-q15" onclick="checkAnswer(this, 'q15', 'D')"> <span>✅ Check Answer</span></label>
+      </div> 
+      
+      <!-- Feedback message -->
+      <p id="feedback-message-q15" style="display: none;"></p>
+      
+      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+      <div class="explanation" style="display:none;">
+        <p>Choice D is the best answer. “However” logically signals that this sentence, which indicates that the Pūhāhonu volcano may be larger than the Mauna Loa volcano, offers a contrast to or refutation of the previous assumption that Mauna Loa is the largest shield volcano.</p>
+      </div>
+    </div>
+  </section>
+  <section id="transition">
+    <div class="question-container">
+        <p>16. Okot p’Bitek’s poem *Song of Lawino* (1966) explores postcolonial Ugandan life through the eyes of a woman living in a rural village. With its vibrant imagery, bitingly satiric tone, and dexterous use of traditional Acholi song and phraseology, the poem inspired a generation of East African writers. ______ those who adopted its style are often referred to as Okot School poets.
+        Which choice completes the text with the most logical transition?</p>
+        <div class="options">
+            <label><input type="radio" name="q16" onclick="storeAnswer(this, 'q16', 'A')"> A. Nevertheless,</label><br>
+            <label><input type="radio" name="q16" onclick="storeAnswer(this, 'q16', 'B')"> B. Fittingly,</label><br>
+            <label><input type="radio" name="q16" onclick="storeAnswer(this, 'q16', 'C')"> C. By comparison,</label><br>
+            <label><input type="radio" name="q16" onclick="storeAnswer(this, 'q16', 'D')"> D. Instead,</label>
+        </div>
+        <!-- Checkbox to verify answer -->
+        <div class="check-answer">
+            <label><input type="checkbox" id="check-answer-box-q16" onclick="checkAnswer(this, 'q16', 'B')"> <span>✅ Check Answer</span></label>
+        </div> 
+        <!-- Feedback message -->
+        <p id="feedback-message-q16" style="display: none;"></p>
+        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+        <div class="explanation" style="display:none;">
+            <p>Choice B is the best answer. “Fittingly” is appropriate here as it suggests that writers who adopted Okot p’Bitek’s style would naturally be referred to as Okot School poets.</p>           
+        </div>
+    </div>
+  </section>
+  
+  <section id="transition">
+    <div class="question-container">
+        <p>17. Before the 1847 introduction of the US postage stamp, the cost of postage was usually paid by the recipient of a letter rather than the sender, and recipients were not always able or willing to pay promptly. ______ collecting this fee could be slow and arduous, and heaps of unpaid-for, undeliverable mail piled up in post offices.
+        Which choice completes the text with the most logical transition?</p>
+        <div class="options">
+            <label><input type="radio" name="q17" onclick="storeAnswer(this, 'q17', 'A')"> A. Regardless,</label><br>
+            <label><input type="radio" name="q17" onclick="storeAnswer(this, 'q17', 'B')"> B. On the contrary,</label><br>
+            <label><input type="radio" name="q17" onclick="storeAnswer(this, 'q17', 'C')"> C. Consequently,</label><br>
+            <label><input type="radio" name="q17" onclick="storeAnswer(this, 'q17', 'D')"> D. For example,</label>
+        </div>
+        <!-- Checkbox to verify answer -->
+        <div class="check-answer">
+            <label><input type="checkbox" id="check-answer-box-q17" onclick="checkAnswer(this, 'q17', 'C')"> <span>✅ Check Answer</span></label>
+        </div> 
+        <!-- Feedback message -->
+        <p id="feedback-message-q17" style="display: none;"></p>
+        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+        <div class="explanation" style="display:none;">
+            <p>Choice C is the best answer. “Consequently” indicates the postal issues arose as a result of the fee system mentioned earlier.</p>           
+        </div>
+    </div>
+  </section>
+  
+  <section id="transition">
+    <div class="question-container">
+        <p>18. In Gothic architecture, flying buttresses are large arches that help support a building’s exterior walls. Before the Gothic era, cathedrals’ heavy ceilings had to be supported by thick, short walls, but the invention of flying buttresses eliminated this need. ______ Gothic cathedrals could be built with thinner, higher walls.
+        Which choice completes the text with the most logical transition?</p>
+        <div class="options">
+            <label><input type="radio" name="q18" onclick="storeAnswer(this, 'q18', 'A')"> A. Similarly,</label><br>
+            <label><input type="radio" name="q18" onclick="storeAnswer(this, 'q18', 'B')"> B. For instance,</label><br>
+            <label><input type="radio" name="q18" onclick="storeAnswer(this, 'q18', 'C')"> C. Nevertheless,</label><br>
+            <label><input type="radio" name="q18" onclick="storeAnswer(this, 'q18', 'D')"> D. As a result,</label>
+        </div>
+        <!-- Checkbox to verify answer -->
+        <div class="check-answer">
+            <label><input type="checkbox" id="check-answer-box-q18" onclick="checkAnswer(this, 'q18', 'D')"> <span>✅ Check Answer</span></label>
+        </div> 
+        <!-- Feedback message -->
+        <p id="feedback-message-q18" style="display: none;"></p>
+        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+        <div class="explanation" style="display:none;">
+            <p>Choice D is the best answer. “As a result” logically signals the consequence of flying buttresses being invented, allowing for thinner and taller cathedral walls.</p>           
+        </div>
+    </div>
+  </section>
+  
+  <section id="transition">
+    <div class="question-container">
+        <p>19. Tyrian purple was a highly prized dye among the Phoenicians (an ancient civilization located in present-day Lebanon). The Phoenicians were famous for using this natural dye to color their clothes a distinctive purple. ______ the name “Phoenicia” itself, some historians claim, may have originally meant “land of purple.”
+        Which choice completes the text with the most logical transition?</p>
+        <div class="options">
+            <label><input type="radio" name="q19" onclick="storeAnswer(this, 'q19', 'A')"> A. In fact,</label><br>
+            <label><input type="radio" name="q19" onclick="storeAnswer(this, 'q19', 'B')"> B. Regardless,</label><br>
+            <label><input type="radio" name="q19" onclick="storeAnswer(this, 'q19', 'C')"> C. Lastly,</label><br>
+            <label><input type="radio" name="q19" onclick="storeAnswer(this, 'q19', 'D')"> D. On the contrary,</label>
+        </div>
+        <!-- Checkbox to verify answer -->
+        <div class="check-answer">
+            <label><input type="checkbox" id="check-answer-box-q19" onclick="checkAnswer(this, 'q19', 'A')"> <span>✅ Check Answer</span></label>
+        </div> 
+        <!-- Feedback message -->
+        <p id="feedback-message-q19" style="display: none;"></p>
+        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+        <div class="explanation" style="display:none;">
+            <p>Choice A is the best answer. “In fact” supports the idea that the name Phoenicia may have been inspired by their use of purple dye.</p>           
+        </div>
+    </div>
+  </section>
+  
+  <section id="transition">
+    <div class="question-container">
+        <p>20. Etched into Peru’s Nazca Desert are line drawings so large that they can only be fully seen from high above. Archaeologists have known of the lines since the 1920s, when a researcher spotted some from a nearby foothill, and they have been studying the markings ever since. ______ archaeologists’ efforts are aided by drones that capture high-resolution aerial photographs of the lines.
+        Which choice completes the text with the most logical transition?</p>
+        <div class="options">
+            <label><input type="radio" name="q20" onclick="storeAnswer(this, 'q20', 'A')"> A. Currently,</label><br>
+            <label><input type="radio" name="q20" onclick="storeAnswer(this, 'q20', 'B')"> B. In comparison,</label><br>
+            <label><input type="radio" name="q20" onclick="storeAnswer(this, 'q20', 'C')"> C. Still,</label><br>
+            <label><input type="radio" name="q20" onclick="storeAnswer(this, 'q20', 'D')"> D. However,</label>
+        </div>
+       <!-- Checkbox to verify answer -->
+       <div class="check-answer">
+        <label><input type="checkbox" id="check-answer-box-q19" onclick="checkAnswer(this, 'q20', 'A')"> <span>✅ Check Answer</span></label>
+    </div> 
+    <!-- Feedback message -->
+    <p id="feedback-message-q20" style="display: none;"></p>
+    <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
+    <div class="explanation" style="display:none;">
+        <p>Choice A is the best answer. “Currently” logically signals that the archaeologists’ use of drones (a current technology) to photograph the lines is the present-day continuation of the ongoing archaeological research described in the previous sentence.</p>           
+    </div>
+</div>
+</section>
+  
+  
+  
+
+
+
+  
+
 
   <!-- Student Note Section -->
   <section id="student-note">
@@ -321,32 +994,108 @@
     </div>
   </section>
 
-  <script>function checkAnswer(option, correctAnswer) {
-    const options = option.closest('.options').querySelectorAll('input');
-  
-    // Deselect other options and reset background color
-    options.forEach(opt => {
-      opt.checked = false;
-      opt.parentNode.classList.remove('correct', 'wrong');
-    });
-  
-    // Check the selected option
-    option.checked = true;
-  
-    // Highlight based on correctness
-    if (option.parentNode.textContent.trim().charAt(0) === correctAnswer) {
-      option.parentNode.classList.add('correct'); // Green for correct
-    } else {
-      option.parentNode.classList.add('wrong'); // Red for incorrect
-      window.navigator.vibrate(100); // Vibrate on wrong answer
+
+
+
+
+  <section id="feedback-section">
+    <div class="feedback-container">
+        <h2>Feedback Form</h2>
+        <form id="feedbackForm" action="/submit" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="cephasbonsuosei001@gmail.com" required>
+
+            <label for="feedback">What should we improve on the SAT website?</label>
+            <textarea id="feedback" name="feedback" rows="5" placeholder="Write your suggestions here..." required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</section>
+
+
+
+  <script>let selectedAnswers = {}; // Store selected answers for each question
+    let attemptCounts = {};   // Store attempt counts for each question
+    
+    function storeAnswer(option, questionId, correctAnswer) {
+        const options = option.closest('.options').querySelectorAll('input');
+        
+        // Deselect other options
+        options.forEach(opt => {
+            opt.checked = false;
+        });
+    
+        // Set the selected answer for the specific question
+        option.checked = true;
+        selectedAnswers[questionId] = option.parentNode.textContent.trim().charAt(0);
     }
-  }
-  
-  function showExplanation(button) {
+    
+    function checkAnswer(checkbox, questionId, correctAnswer) {
+        const feedbackMessage = document.getElementById(`feedback-message-${questionId}`);
+        const options = document.querySelectorAll(`input[name="${questionId}"]`);
+        
+        // Initialize attempt count if it doesn't exist for this question
+        if (!attemptCounts[questionId]) {
+            attemptCounts[questionId] = 0;
+        }
+    
+        if (checkbox.checked && selectedAnswers[questionId] !== null) {
+            if (selectedAnswers[questionId] === correctAnswer) {
+                feedbackMessage.textContent = "🎉 Congratulations! You selected the correct answer.";
+                feedbackMessage.style.color = "green";
+                feedbackMessage.style.display = "block";
+    
+                // Disable all options after the correct answer
+                options.forEach(opt => {
+                    opt.disabled = true;
+                });
+    
+                checkbox.disabled = true; // Disable checkbox after correct answer
+                attemptCounts[questionId] = 0; // Reset attempt counter for this question after correct answer
+            } else {
+                attemptCounts[questionId]++; // Increment attempt counter for this question
+                if (attemptCounts[questionId] === 1) {
+                    feedbackMessage.textContent = "❌ Incorrect. Try again!";
+                    feedbackMessage.style.color = "red";
+                } else if (attemptCounts[questionId] === 2) {
+                    feedbackMessage.textContent = "🙌 Keep your head up, you're almost there!";
+                    feedbackMessage.style.color = "orange";
+                } else if (attemptCounts[questionId] === 3) {
+                    feedbackMessage.textContent = "🚫 Nope, try one more time!";
+                    feedbackMessage.style.color = "red";
+                    attemptCounts[questionId] = 0; // Reset after third attempt to allow retry
+                }
+                feedbackMessage.style.display = "block";
+    
+                // Allow retry by unchecking the checkbox
+                checkbox.checked = false;
+            }
+        }
+    }
+    
+    
+    function showExplanation(button) {
     const explanation = button.nextElementSibling;
     explanation.style.display = explanation.style.display === "none" ? "block" : "none";
   }
-  
+    
   </script>
+  <footer id="site-footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <p class="tagline">CKODON FOUNDATION 24</p>
+            <p class="subtitle">Impossibility Our Specialty</p>
+            <p>Empowering communities for a brighter future</p>
+        </div>
+        <div class="footer-links">
+            <p class="footer-note">Powered by CKODON FOUNDATION 24</p>
+        </div>
+    </div>
+</footer>
+
 </body>
-</html>
+</html> 
