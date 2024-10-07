@@ -1,1101 +1,986 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>CKodon Foundation SAT Practice Test</title>
-  <style>/* Global Styles */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNOVATEX - OSEI-BONSU CEPHAS Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        color: #333;
-        background-color: #f4f7f9; /* Light background */
-    }
-    
-    .background-img {
-        width: 100%;
-        height: 700px; /* Increased height */
-        object-fit: cover;
-        filter: brightness(75%); /* Slightly darkened to make text pop */
-    }
-    
-    .profile-container {
-        text-align: center;
-        padding: 20px;
-        background-color: #ffffff; /* White background for contrast */
-        margin-top: -150px;
-        z-index: 1;
-        position: relative;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 5px solid #007bff; /* Blue border around profile picture */
-        margin-top: -75px;
-    }
-    
-    h1 {
-        margin: 0;
-        font-size: 2.5em;
-        color: #1637f1; /* Dark blue for heading */
-    }
-    
-    h2 {
-        text-align: center; /* Center align all section titles */
-        margin: 10px 0;
-        font-size: 1.8em;
-        color: #007bff; /* Primary blue for subheadings */
-    }
-    
-    p {
-        margin: 10px 0;
-        line-height: 1.6;
-        color: #07080ccc; /* Gray for body text */
-    }
-    
-    a {
-        color: #007bff;
-        text-decoration: none;
-    }
-    
-    a:hover {
-        text-decoration: underline;
-    }
-    
-    .intro-section {
-        text-align: center;
-        padding: 40px;
-        background-color: #34495e;
-        color: white;
-        border-bottom: 5px solid #2c3e50;
-        position: relative;
-    }
-    
-    .intro-section h1 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 2.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    }
-    
-    .navbar {
-        background-color: #0e3bcf;
-        padding: 15px 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    
-    .navbar ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    
-    .navbar ul li {
-        display: inline-block;
-        margin: 0 15px;
-    }
-    
-    .navbar ul li a {
-        text-decoration: none;
-        color: #ecf0f1;
-        font-weight: bold;
-        font-size: 1.1rem;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-    
-    .navbar ul li a:hover {
-        background-color: #1abc9c;
-        color: white;
-    }
-    
-    .question-container {
-        max-width: 700px;
-        margin: 40px auto;
-        padding: 30px;
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-        font-size: 1.2rem;
-        transition: transform 0.3s;
-    }
-    
-    .question-container:hover {
-        transform: scale(1.02);
-    }
-    
-    .options label {
-        font-size: 1.1rem;
-        color: #555;
-        display: block;
-        margin: 10px 0;
-        padding: 10px;
-        border: 1px solid #bdc3c7;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .options label:hover {
-        background-color: #ecf0f1;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    
-    .correct {
-        background-color: #a8e6a1 !important; /* Green */
-    }
-    
-    .wrong {
-        background-color: #f8d7da !important; /* Red */
-    }
-    
-    button.explanation-btn {
-        background-color: #2980b9;
-        color: white;
-        padding: 15px;
-        border: none;
-        cursor: pointer;
-        margin-top: 20px;
-        display: block;
-        width: 100%;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        transition: background-color 0.3s ease;
-    }
-    
-    button.explanation-btn:hover {
-        background-color: #3498db;
-    }
-    
-    .explanation {
-        margin-top: 15px;
-        padding: 15px;
-        background-color: #f9f9f9;
-        border-left: 5px solid #3498db;
-        border-radius: 5px;
-        font-size: 1rem;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .navbar ul li {
-            display: block;
-            margin: 10px 0;
-        }
-    
-        .question-container {
-            padding: 20px;
-            margin: 20px 10px;
-            font-size: 1.1rem;
-        }
-    
-        button.explanation-btn {
-            font-size: 1rem;
-            padding: 12px;
-        }
-    
-        .options label {
-            font-size: 1rem;
-            padding: 8px;
-        }
-    }
-    .check-answer {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f7f9; /* Light background */
 }
 
-.check-answer input[type="checkbox"] {
-    transform: scale(1.5);
-    margin-right: 10px;
-    accent-color: #2980b9; /* Blue accent */
-    transition: transform 0.2s ease-in-out;
+.background-img {
+    width: 100%;
+    height: 400px; /* Increased height */
+    object-fit: cover;
+    filter: brightness(75%); /* Slightly darkened to make text pop */
 }
 
-.check-answer input[type="checkbox"]:hover {
-    transform: scale(1.7); /* Enlarge checkbox on hover */
-}
-
-.check-answer span {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-#feedback-message {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-#feedback-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0;
-    background-color: #f4f4f4;
-}
-
-.feedback-container {
-    background-color: #fff;
+.profile-container {
+    text-align: center;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    background-color: #ffffff; /* White background for contrast */
+    margin-top: -150px;
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #007bff; /* Blue border around profile picture */
+    margin-top: -75px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #004080; /* Dark blue for heading */
 }
 
 h2 {
-    text-align: center;
-}
-
-input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    font-size: 1.8em;
+    color: #007bff; /* Primary blue for subheadings */
 }
 
-button {
-    width: 100%;
+p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #555; /* Gray for body text */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.about-me, .interests, .skills, .projects {
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin: 20px 0;
+    border-radius: 10px;
+    border-left: 5px solid #007bff; /* Blue accent on the left */
+}
+
+.interests ul, .skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.interests li, .skills li {
+    background-color: #e9ecef;
+    margin: 10px 0;
     padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-label {
+    border-radius: 5px;
+    text-align: center;
+    color: #004080; /* Dark blue text */
     font-weight: bold;
 }
-#site-footer {
-    background: linear-gradient(135deg, #0056b3, #00aaff); /* Gradient background */
-    color: #FFFFFF; /* White text */
-    padding: 20px 10px; /* Reduced padding for compactness */
+
+/* Projects Section */
+#projects {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+#projects h2 {
     text-align: center;
+    color: #333; /* Standard gray */
+    margin-bottom: 20px; /* Space between heading and projects */
+}
+
+/* Project section grid layout */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.project {
+    flex: 1 1 calc(33.333% - 20px); /* Three projects per row */
+    box-sizing: border-box;
+    background-color: #fff; /* Add a background color */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-img {
     width: 100%;
-    font-family: 'Arial', sans-serif;
+    height: 180px; /* Adjusted height for consistency */
+    object-fit: cover; /* Ensures images cover the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.footer-content {
-    max-width: 1200px; /* Max width for content */
-    margin: 0 auto; /* Center the content */
-    display: flex; /* Flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align items */
+.project h3 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+    color: #007aec; /* Standard gray */
+    text-align: center;
 }
 
-.footer-text {
-    margin-bottom: 10px; /* Reduced space between text and links */
+.project p {
+    margin: 10px 0;
+    line-height: 1.4;
+    color: #555;
+    text-align: center;
+    flex-grow: 1;
 }
 
-.tagline {
-    font-size: 20px; /* Slightly smaller font size */
-    font-weight: bold; /* Bold font weight */
-    color: #ffffff; /* White color */
-    margin-bottom: 3px; /* Space below tagline */
-    letter-spacing: 1px; /* Spacing between letters */
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 768px) {
+    .project {
+        flex: 1 1 100%; /* Stack projects on smaller screens */
+    }
+}
+/* Video Demonstration Section */
+#video-demonstration {
+    padding: 50px;
+    background-color: #f4f7f9; /* Light background */
 }
 
-.subtitle {
-    font-size: 16px; /* Subtitle font size */
-    font-weight: bold; /* Bold font weight */
-    margin-bottom: 10px; /* Reduced margin */
-    color: #ffffff; /* White color */
+#video-demonstration h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #004080; /* Dark blue for heading */
 }
 
-.footer-content p {
-    font-size: 14px; /* Slightly smaller font size */
-    margin: 3px 0; /* Reduced margin for spacing */
-    color: #ffffff; /* White text for contrast */
+#video-demonstration .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
-.footer-note {
-    margin-top: 5px; /* Reduced margin on top */
-    font-size: 12px; /* Smaller font size for note */
-    color: #f0f0f0; /* Light gray color for note */
-    border-top: 1px solid #ffffff; /* White border on top */
-    padding-top: 5px; /* Reduced padding */
-    width: 100%; /* Full width */
+#video-demonstration .project {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    flex-basis: calc(50% - 20px); /* Two videos per row */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#video-demonstration h3 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+    color: #007bff; /* Blue for subheadings */
+    text-align: center;
+}
+
+#video-demonstration .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    background: #000;
+}
+
+#video-demonstration .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    #video-demonstration .project {
+        flex-basis: 100%; /* Stack videos on smaller screens */
+    }
+}
+/* General Section Styling */
+#certifications {
+    padding: 40px;
+    background-color: #f8f9fa;
+    margin: 20px 0;
+    border-radius: 10px;
+    border-left: 5px solid #007bff; /* Blue accent on the left */
+}
+
+#certifications h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Styling for certification categories */
+.certification-category {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-left: 5px solid #007bff; /* Blue accent on the left */
+    border-radius: 10px;
+}
+
+/* Styling for individual certificates */
+.certificate {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #e9ecef;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.certificate img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+/* Certificate info styling */
+.certificate-info {
+    text-align: left;
+}
+
+.certificate-info h4 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    color: #004080; /* Dark blue text */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.certificate-info h4 i {
+    color: #FFD700;
+    margin-right: 10px;
+}
+
+.certificate-info p {
+    color: #666;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .footer-content {
-        padding: 10px; /* Less padding on smaller screens */
-    }
-    
-    .tagline {
-        font-size: 18px; /* Slightly smaller on small screens */
+    .certificate {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .subtitle {
-        font-size: 14px; /* Slightly smaller on small screens */
+    .certificate img {
+        margin-bottom: 15px;
+    }
+}
+/* Achievements Section Styling */
+#achievements {
+    padding: 40px;
+    background-color: #f8f9fa;
+    margin: 20px 0;
+    border-radius: 10px;
+    border-left: 5px solid #007bff; /* Blue accent on the left */
+}
+
+#achievements h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.achievements-container {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.achievements-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.achievements-list li {
+    background-color: #e9ecef;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    color: #004080; /* Dark blue text */
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #achievements {
+        padding: 20px;
+    }
+
+    .achievements-list li {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+/* Research Paper Section */
+#research-paper {
+    background-color: #f9f9f9;
+    padding: 30px 20px; /* Increased padding for more space */
+    margin: 20px 10px; /* Reduced side margins for a bit more width */
+    border-radius: 10px;
+    border-left: 5px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.research-container {
+    max-width: 100%; /* Full width with container centering */
+    margin: 0 auto; /* Center the container */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    font-size: 2.7rem; /* Slightly increased size */
+    color: #333;
+    margin-bottom: 25px; /* More space below heading */
+}
+
+h3 {
+    font-size: 1.6rem; /* Slightly increased size */
+    color: #444;
+    margin-top: 25px; /* More space above heading */
+    margin-bottom: 15px; /* More space below heading */
+}
+
+p {
+    font-size: 1.05rem; /* Slightly increased font size */
+    color: #666;
+    line-height: 1.7; /* Increased line height for better readability */
+}
+
+/* Research Paper Link */
+.research-link {
+    display: block;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 14px 22px; /* Increased padding */
+    margin: 25px auto; /* Adjusted margin for more spacing */
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.research-link:hover {
+    background-color: #0056b3;
+}
+
+/* Diagrams - Adjusted Sizes */
+.diagram {
+    display: block;
+    width: 100%;
+    max-width: 650px; /* Slightly increased max-width */
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .diagram {
+        max-width: 550px; /* Adjusted size for tablet screens */
     }
 }
 
+@media (max-width: 767px) {
+    .diagram {
+        max-width: 400px; /* Adjusted size for mobile screens */
+    }
 
-    
-    </style>
-</head>
+    h2 {
+        font-size: 2.2rem; /* Adjusted heading size on mobile */
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Future Work and References Sections */
+.future-work {
+    margin-top: 35px; /* Increased margin-top */
+    padding-top: 25px; /* Increased padding-top */
+    border-top: 1px solid #ddd;
+}
+
+.references ul {
+    list-style-type: disc;
+    padding: 0 20px;
+}
+
+.references ul li {
+    font-size: 1rem; /* Adjusted font size */
+    color: #444;
+    margin-bottom: 12px; /* Increased spacing between list items */
+}
+
+.references ul i {
+    font-style: italic;
+}
+
+#contact {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#contact {
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin: 20px 0;
+    border-radius: 10px;
+    border-left: 5px solid #007bff; /* Blue accent on the left */
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+/* Footer Section */
+.footer-container {
+    text-align: center;
+    width: 100%; /* Extend full width */
+    padding: 10px 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.social-link {
+    display: inline-block;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #050505;
+}
+
+/* Responsive layout for footer */
+@media screen and (max-width: 768px) {
+    .social-media {
+        flex-direction: row; /* Keep icons in a single row */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        gap: 10px;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer-container {
+        padding: 5px 10px; /* Reduce padding on mobile */
+    }
+}
+.future-plans {
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin: 20px 0;
+    border-radius: 10px;
+    border-left: 5px solid #007bff; /* Blue accent on the left */
+}
+
+.future-plans h2 {
+    color: #004080; /* Dark blue */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.plan-section {
+    background-color: #e9ecef;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.plan-section h3 {
+    color: #004080; /* Dark blue */
+    font-weight: bold;
+}
+
+.plan-section p {
+    font-size: 16px;
+    color: #333; /* Darker gray for readability */
+}
+
+
+</style>
 <body>
+
     <!-- Background Image -->
     <div class="background-img">
-        <img src="https://i.imgur.com/EzdOmJr.jpeg" alt="Background Image" class="background-img">
+        <img src="https://sweagro.com/wp-content/uploads/2024/06/AdobeStock_728648201-scaled.jpg" alt="Background Image" class="background-img">
     </div>
 
     <!-- Profile Section -->
     <div class="profile-container">
-        <img src="https://i.imgur.com/qrfF8Cn.jpeg" alt="Profile Picture" class="profile-pic">
-        <h1>THE CKODON FOUNDATION</h1>
-        <h2>DIGITAL SAT PRACTICE TEST</h2>
-        <p> A Platform to practice SAT questions, enhancing your problem-solving skills and providing access to additional practice tests.</p>
+        <img src="https://imgur.com/TAN04fH.png" alt="Profile Picture" class="profile-pic">
+        <h1>Osei-Bonsu Cephas</h1>
+        <h2>Major: Electrical Engineering</h2>
+        <p>I am drawn to Electronics, with a specific focus on Intelligent Robotics and Environmental Sustainability. My goal is to leverage my expertise to drive positive change in two critical sectors: transportation and environmental sustainability. I envision developing innovative robotic systems that transform transportation by enhancing safety, efficiency, and sustainability through autonomous vehicles and intelligent traffic management.</p>
+        <p><strong>Contact:</strong> cephasoseib001@gmail.com</p>
     </div>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#transition">Transitions</a></li>
-      <li><a href="#student-note">Student Note</a></li>
-      <li><a href="#boundaries">Boundaries</a></li>
-      <li><a href="#form-structure-sense">Form, Structure & Sense</a></li>
-    </ul>
-  </nav>
+    <!-- About Me Section -->
+    <div class="about-me">
+        <h2>About Me</h2>
+        <p>I’m Osei-Bonsu Cephas, a proud General Science graduate from Konongo Odumase Senior High School. Curiosity has always been my compass, guiding me to explore the unknown and challenge myself to uncover the ‘why’ behind everything I encounter. With an unquenchable thirst for knowledge, I see every day as an opportunity to learn and grow. As a passionate tech enthusiast, I’m driven by a bigger purpose: to harness the power of technology in ways that protect our planet and ensure a sustainable future for generations to come</p>
+    </div>
 
-  
-  </header>
+    <!-- Interests Section -->
+    <div class="interests">
+        <h2>Interests</h2>
+        <ul>
+            <li>STEM Education</li>
+            <li>Climate Change</li>
+            <li>Robotics</li>
+            <li>Machine Learning</li>
+            <li>Research</li>
+            <li>Green Technology</li>
+            <li>Internet of Things</li>
+            <li>Artificial Intelligence</li>
+            <li>sustainable Technology</li>
+        </ul>
+    </div>
 
-  <section id="transition">
-    <h2>Transitions</h2>
-    <div class="question-container">
-        <p>1. Samuel Coleridge-Taylor was a prominent classical music composer from England who toured the US three times in the
-            early 1900s. The child of a West African father and an English mother, Coleridge-Taylor emphasized his mixed-race
-            ancestry. For example, he referred to himself as Anglo-African. ______ he incorporated the sounds of traditional African
-            music into his classical music compositions.
-            Which choice completes the text with the most logical transition?
-        </p>
-        <div class="options">
-            <label><input type="radio" name="q1" onclick="storeAnswer(this, 'q1', 'A')"> A. In addition,</label><br>
-            <label><input type="radio" name="q1" onclick="storeAnswer(this, 'q1', 'B')"> B. Actually,</label><br>
-            <label><input type="radio" name="q1" onclick="storeAnswer(this, 'q1', 'C')"> C. However,</label><br>
-            <label><input type="radio" name="q1" onclick="storeAnswer(this, 'q1', 'D')"> D. Regardless,</label>
+    <!-- Skills Section -->
+    <div class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Organization</li>
+            <li>Coordination</li>
+            <li>Persuasive Public Speaking</li>
+            <li>Computational Thinking</li>
+            <li>Arduino</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>Leadership & Creativity</li>
+            <li>Web Development</li>
+
+        </ul>
+    </div>
+    <section id="achievements">
+        <div class="achievements-container">
+            <h2>Achievements and Accolades</h2>
+            <ul class="achievements-list">
+                <li>Regional Trailblazer in STEM Innovation and Entrepreneurship</li>
+                <li>SCIENCETIA INTEGRALIS AWARD</li>
+                <li>PARAGON OF SCHOLARSHIP AWARD</li>
+                <li>SRC UNITY IN ACTION AWARD</li>
+                <li>NexGen Innovator Award</li>
+                <li>Intellecta Honors Championship</li>
+                <li>Raised awareness about water conservation and provided access to clean water for underprivileged communities, benefiting various communities through outreach programs, filtration system installations, and water donation drives</li>
+            </ul>
         </div>
-        <!-- Checkbox to verify answer -->
-        <div class="check-answer">
-            <label><input type="checkbox" id="check-answer-box-q1" onclick="checkAnswer(this, 'q1', 'A')"> <span>✅ Check Answer</span></label>
+        <div class="future-plans">
+            <h2>Future Plans and Ambition</h2>
+            <div class="plan-section">
+                <h3>1. Mitigating Weather Conditions and Air Quality</h3>
+                <p>I aim to build systems that can mitigate changes in weather conditions, monitor air quality, and provide solutions to protect the planet and generations to come.</p>
+            </div>
+            <div class="plan-section">
+                <h3>2. Improving Telemedicine and Renewable Energy</h3>
+                <p>My goal is to improve telemedicine infrastructure and develop renewable energy solutions to ensure hospitals have a sustainable power supply, improving healthcare outcomes.</p>
+            </div>
+            <div class="plan-section">
+                <h3>3.Disaster Preparedness and Recovery</h3>
+                <p> I aim to design disaster-resilient energy systems that ensure power supply during natural disasters. This includes setting up off-grid power 
+                    solutions like solar and wind energy that continue functioning when centralized grids are disrupted.</p>
+            </div>
+            <div class="plan-section">
+                <h3>3.Food Security and Automation in Agriculture</h3>
+                <p>Precision Agriculture: Making Robos, drones, and IoT sensors that can be deployed in farming to create precision agriculture systems. These systems use data on soil quality, weather,
+                     and crop health to optimize irrigation, fertilization, and pesticide use, reducing resource consumption while increasing yields</p>
+            </div>
+            <div class="plan-section">
+                <h3>4.Sustainable Transportation</h3>
+                <p> developement of EVs and their charging infrastructure. Automated battery 
+                    management systems ensure optimal performance and longevity, reducing the carbon footprint of transportation.</p>
+            </div>
+            <div class="plan-section">
+                <h3>5.Biodiversity Loss and Habitat Destruction</h3>
+                <p>Conservation Drones: Drones equipped with sensors can be used for wildlife monitoring and habitat protection. These drones can track endangered species, 
+                    monitor illegal deforestation, and assess environmental changes over time.</p>
+            </div>
         </div>
-        <!-- Feedback message -->
-        <p id="feedback-message-q1" style="display: none;"></p>
-        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-        <div class="explanation" style="display:none;">
-            <p>Choice A is the best answer. “In addition” logically signals that the detail in this sentence—that Coleridge-Taylor included
-              traditional African music in his classical compositions—adds to the information in the previous sentence. Specifically, the
-              previous sentence indicates one way in which Coleridge-Taylor emphasized his mixed-race ancestry, and the claim that
-              follows indicates a second, additional way</p>
-        </div>
-    </div>
-</section>
-<section id="transition">
-  <div class="question-container">
-      <p>2.  In her poetry collection Thomas and Beulah, Rita Dove interweaves the titular characters’ personal stories with broader
-        historical narratives. She places Thomas’s journey from the American South to the Midwest in the early 1900s within the
-        larger context of the Great Migration. ______ Dove sets events from Beulah’s personal life against the backdrop of the US
-        Civil Rights Movement.
-        Which choice completes the text with the most logical transition?
-      </p>
-      <div class="options">
-          <label><input type="radio" name="q2" onclick="storeAnswer(this, 'q2', 'A')"> A. Specifically,</label><br>
-          <label><input type="radio" name="q2" onclick="storeAnswer(this, 'q2', 'B')"> B. Thus,</label><br>
-          <label><input type="radio" name="q2" onclick="storeAnswer(this, 'q2', 'C')"> C. Regardless,</label><br>
-          <label><input type="radio" name="q2" onclick="storeAnswer(this, 'q2', 'D')"> D. Similarly,</label>
-      </div>
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-          <label><input type="checkbox" id="check-answer-box-q2" onclick="checkAnswer(this, 'q2', 'D')"> <span>✅ Check Answer</span></label>
-      </div>
-      <!-- Feedback message -->
-      <p id="feedback-message-q2" style="display: none;"></p>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-          <p>Choice D is the best answer. “Similarly” logically signals that the information in the sentence—that Dove situates Beulah’s
-            life in the context of the US Civil Rights Movement—is similar to the previous information about Thomas and the Great
-            Migration. Both sentences support the first sentence’s claim that Dove portrays her characters in the context of broader
-            historical narratives. 
-            Choice D is the best answer. “Similarly” logically signals that the information in the sentence—that Dove situates Beulah’s
-    life in the context of the US Civil Rights Movement—is similar to the previous information about Thomas and the Great
-    Migration. Both sentences support the first sentence’s claim that Dove portrays her characters in the context of broader
-    historical narratives.</p>
-      </div>
-  </div>
-</section>
-
-</section>
-<section id="transition">
-  <div class="question-container">
-      <p>3. In a heated debate in biogeography, the field is divided between dispersalists and vicariancists. ______ there are those
-        who argue that dispersal is the most crucial determining factor in a species’ distribution, and those who insist that
-        vicariance (separation due to geographic barriers) is. Biogeographer Isabel Sanmartín counts herself among neither.
-        Which choice completes the text with the most logical transition?
-      </p>
-      <div class="options">
-          <label><input type="radio" name="q3" onclick="storeAnswer(this, 'q3', 'A')"> A. Furthermore,</label><br>
-          <label><input type="radio" name="q3" onclick="storeAnswer(this, 'q3', 'B')"> B. By contrast,</label><br>
-          <label><input type="radio" name="q3" onclick="storeAnswer(this, 'q3', 'C')"> C. Similarly,</label><br>
-          <label><input type="radio" name="q3" onclick="storeAnswer(this, 'q3', 'D')"> D. That is,</label>
-      </div>
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-          <label><input type="checkbox" id="check-answer-box-q3" onclick="checkAnswer(this, 'q3', 'D')"> <span>✅ Check Answer</span></label>
-      </div>
-      <!-- Feedback message -->
-      <p id="feedback-message-q3" style="display: none;"></p>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-          <p>Choice D is the best answer. “That is” logically signals that this sentence clarifies the terms of the scientific debate
-            introduced in the previous sentence by explaining the difference between dispersalists and vicariancists.</div>
-  </div>
-</section>
-</section>
-<section id="transition">
-  <div class="question-container">
-      <p>4.Most of the planets that have been discovered outside our solar system orbit G-type stars, like our Sun. In 2014, ______
-        researchers identified a planet orbiting KELT-9, a B-type star more than twice as massive and nearly twice as hot as the
-        Sun. Called KELT-9b, it is one of the hottest planets ever discovered.
-        Which choice completes the text with the most logical transition?
-      </p>
-      <div class="options">
-          <label><input type="radio" name="q4" onclick="storeAnswer(this, 'q4', 'A')"> A. Likewise,</label><br>
-          <label><input type="radio" name="q4" onclick="storeAnswer(this, 'q4', 'B')"> B. However,</label><br>
-          <label><input type="radio" name="q4" onclick="storeAnswer(this, 'q4', 'C')"> C. Therefore,</label><br>
-          <label><input type="radio" name="q4" onclick="storeAnswer(this, 'q4', 'D')"> D. For example,</label>
-      </div>
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-          <label><input type="checkbox" id="check-answer-box-q4" onclick="checkAnswer(this, 'q4', 'B')"> <span>✅ Check Answer</span></label>
-      </div>
-      <!-- Feedback message -->
-      <p id="feedback-message-q4" style="display: none;"></p>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-          <p>Choice D is the best answer. “That is” logically signals that this sentence clarifies the terms of the scientific debate
-            introduced in the previous sentence by explaining the difference between dispersalists and vicariancists.</div>
-  </div>
-</section>
-<section id="transition">
-    <div class="question-container">
-        <p>5.In 1815, while in exile in Jamaica, Venezuelan revolutionary Simón Bolívar penned a letter praising England’s republican
-            government and expressing hope that Latin American nations seeking independence from Spain might achieve
-            something similar. The letter was addressed to a local merchant, Henry Cullen; ______ though, Bolívar’s goal was to
-            persuade political leaders from England and Europe to support his cause.
-            Which choice completes the text with the most logical transition?
-            
-        </p>
-        <div class="options">
-            <label><input type="radio" name="q5" onclick="storeAnswer(this, 'q5', 'A')"> A. Additionally,</label><br>
-            <label><input type="radio" name="q5" onclick="storeAnswer(this, 'q5', 'B')"> B. Ultimately,</label><br>
-            <label><input type="radio" name="q5" onclick="storeAnswer(this, 'q5', 'C')"> C. Accordingly,</label><br>
-            <label><input type="radio" name="q5" onclick="storeAnswer(this, 'q5', 'D')"> D. Consequently,</label>
-        </div>
-        <!-- Checkbox to verify answer -->
-        <div class="check-answer">
-            <label><input type="checkbox" id="check-answer-box-q5" onclick="checkAnswer(this, 'q5', 'B')"> <span>✅ Check Answer</span></label>
-        </div>
-        <!-- Feedback message -->
-        <p id="feedback-message-q5" style="display: none;"></p>
-        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-        <div class="explanation" style="display:none;">
-            <p>Choice B is the best answer. “Ultimately” means “in the long run” or “at the highest level.” Although Bolívar wrote to a local
-                merchant, his ultimate goal was to send a message to political leaders in Europe. Therefore, “ultimately” fits perfectly in
-                this context.
-                </div>
-    </div>
-  </section>
-  <section id="transition">
-    <div class="question-container">
-        <p>6.The Babylonian king Hammurabi achieved much during his forty-year reign. He conquered all of Mesopotamia and built
-            Babylon into one of the most powerful cities of the ancient world. Today, ______ he is mainly remembered for a code of
-            laws inscribed on a seven-foot-tall block of stone: the Code of Hammurabi.
-            
-            Which choice completes the text with the most logical transition?
-            </p>
-        <div class="options">
-            <label><input type="radio" name="q6" onclick="storeAnswer(this, 'q6', 'A')"> A. Therefore,</label><br>
-            <label><input type="radio" name="q6" onclick="storeAnswer(this, 'q6', 'B')"> B. Likewise,</label><br>
-            <label><input type="radio" name="q6" onclick="storeAnswer(this, 'q6', 'C')"> C. However,</label><br>
-            <label><input type="radio" name="q6" onclick="storeAnswer(this, 'q6', 'D')"> D. For instance,</label>
-        </div>
-        <!-- Checkbox to verify answer -->
-        <div class="check-answer">
-            <label><input type="checkbox" id="check-answer-box-q6" onclick="checkAnswer(this, 'q6', 'C')"> <span>✅ Check Answer</span></label>
-        </div>
-        <!-- Feedback message -->
-        <p id="feedback-message-q6" style="display: none;"></p>
-        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-        <div class="explanation" style="display:none;">
-            <p>Choice C is the best answer. “However” logically signals that the information in this sentence—that Hammurabi is mainly
-                remembered for just a single achievement, the Code of Hammurabi—is contrary to what might be assumed from the
-                previous information about Hammurabi’s many achievements. 
-                </div>
-    </div>
-  </section>
-</section>
-<section id="transition">
-  <div class="question-container">
-      <p>7.  Some members of the US Supreme Court have resisted calls to televise the court’s oral arguments, concerned that the
-        participants would be tempted to perform for the cameras (and thus lower the quality of the discourse). ______ the
-        justices worry that most viewers would not even watch the full deliberations, only short clips that could be misinterpreted
-        and mischaracterized.Which choice completes the text with the most logical transition?
-
-          </p>
-      <div class="options">
-          <label><input type="radio" name="q7" onclick="storeAnswer(this, 'q7', 'A')"> A. However,</label><br>
-          <label><input type="radio" name="q7" onclick="storeAnswer(this, 'q7', 'B')"> B. Additionally,</label><br>
-          <label><input type="radio" name="q7" onclick="storeAnswer(this, 'q7', 'C')"> C. In comparison,</label><br>
-          <label><input type="radio" name="q7" onclick="storeAnswer(this, 'q7', 'D')"> D. For example</label>
-      </div>
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-          <label><input type="checkbox" id="check-answer-box-q7" onclick="checkAnswer(this, 'q7', 'B')"> <span>✅ Check Answer</span></label>
-      </div>
-      <!-- Feedback message -->
-      <p id="feedback-message-q7" style="display: none;"></p>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-          <p>Choice B is the best answer. “Additionally” logically signals that the claim in this sentence—that some Supreme Court
-            justices worry that viewers (of televised court arguments) would watch only short, misleading clips—adds to the
-            information in the previous sentence. Specifically, the previous sentence indicates one concern raised by those opposed
-            to televising the court’s oral arguments, and the claim that follows indicates a second, additional concern.</p>           
-              </div>
-  </div>
-</section>
-</section>
-<section id="transition">
-  <div class="question-container">
-      <p>8.Award-winning travel writer Linda Watanabe McFerrin considers the background research she conducts on destinations
-        featured in her travel books to be its own reward. ______ McFerrin admits to finding the research phase of her work just as
-        fascinating and engaging as exploring a location in person.
-        Which choice completes the text with the most logical transition?</p>
-      <div class="options">
-          <label><input type="radio" name="q8" onclick="storeAnswer(this, 'q8', 'A')"> A. By contrast,</label><br>
-          <label><input type="radio" name="q8" onclick="storeAnswer(this, 'q8', 'B')"> B. Likewise,</label><br>
-          <label><input type="radio" name="q8" onclick="storeAnswer(this, 'q8', 'C')"> C. Besides,</label><br>
-          <label><input type="radio" name="q8" onclick="storeAnswer(this, 'q8', 'D')"> D. In fact,</label>
-      </div>
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-          <label><input type="checkbox" id="check-answer-box-q8" onclick="checkAnswer(this,'q8', 'D')"> <span>✅ Check Answer</span></label>
-      </div> 
-      <!-- Feedback message -->
-      <p id="feedback-message-q8" style="display: none;"></p>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-          <p>Choice D is the best answer. “In fact” logically signals that the information in this sentence—that McFerrin finds the
-            research phase of her work to be just as fascinating as travel—emphasizes and elaborates on the previous sentence’s
-            point that McFerrin regards background research as a rewarding activity.</p>           
-              </div>
-  </div>
-</section>
-</section>
-<section id="transition">
-  <div class="question-container">
-      <p>9.In 1873, Spanish scientist Santiago Ramón y Cajal observed that brain fibers have distinct boundaries with clear end
-        points, a finding that went against earlier assumptions about the brain. ______ scientists had assumed that the brain was
-        a continuous web of fused fibers, not a vast network of distinct, individual cells.
-        Which choice completes the text with the most logical transition?
- </p>
-      <div class="options">
-          <label><input type="radio" name="q9" onclick="storeAnswer(this, 'q9', 'A')"> A. However,</label><br>
-          <label><input type="radio" name="q9" onclick="storeAnswer(this, 'q9', 'B')"> B. Previously,</label><br>
-          <label><input type="radio" name="q9" onclick="storeAnswer(this, 'q9', 'C')"> C. As a results,</label><br>
-          <label><input type="radio" name="q9" onclick="storeAnswer(this, 'q9', 'D')"> D. Likewise,</label>
-      </div>
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-          <label><input type="checkbox" id="check-answer-box-q9" onclick="checkAnswer(this,'q9', 'B')"> <span>✅ Check Answer</span></label>
-      </div> 
-      <!-- Feedback message -->
-      <p id="feedback-message-q9" style="display: none;"></p>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-          <p>Choice B is the best answer. “Previously” logically signals that the fused fiber theory came before Ramón y Cajal’s
-            discovery.</p>           
-              </div>
-  </div>
-</section>
-</section>
-<section id="transition">
-  <div class="question-container">
-      <p>10.For years, biologists have experimented with using grime-eating bacteria rather than harsh chemicals to clean artworks,
-        and results have been impressive overall. ______ these bacterial strains—which can metabolize centuries’ worth of oil,
-        glue, dirt, and other surface impurities without creating harmful byproducts—have proven more effective than traditional
-        chemical cleaning methods.
-        Which choice completes the text with the most logical transition?
- </p>
- <div class="options">
-    <label><input type="radio" name="q10" onclick="storeAnswer(this, 'q10', 'A')"> A. However,</label><br>
-    <label><input type="radio" name="q10" onclick="storeAnswer(this, 'q10', 'B')"> B. In many cases,</label><br>
-    <label><input type="radio" name="q10" onclick="storeAnswer(this, 'q10', 'C')"> C. As a results,</label><br>
-    <label><input type="radio" name="q10" onclick="storeAnswer(this, 'q10', 'D')"> D. Additionally,</label>
-      
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-          <label><input type="checkbox" id="check-answer-box-q10" onclick="checkAnswer(this,'q10', 'B')"> <span>✅ Check Answer</span></label>
-      </div> 
-      <!-- Feedback message -->
-      <p id="feedback-message-q10" style="display: none;"></p>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-          <p>Choice B is the best answer. The first sentence makes the claim that using grime-eating bacteria has led to “impressive
-            results.” This sentence supports that claim by describing the specific findings of the biologists’ experimentation. The
-            transition “in many cases” fits the context perfectly.</p>           
-              </div>
-  </div>
-</section>
-<section id="transition">
-    <div class="question-container">
-      <p>11. In 1968, US Congressman John Conyers introduced a bill to establish a national holiday in honor of Dr. Martin Luther King Jr. 
-      The bill didn’t make it to a vote, but Conyers was determined. He teamed up with Shirley Chisholm, the first Black woman to be elected to Congress, 
-      and they resubmitted the bill every session for the next fifteen years. ______ in 1983, the bill passed. 
-      Which choice completes the text with the most logical transition?</p>
-      
-      <div class="options">
-        <label><input type="radio" name="q11" onclick="storeAnswer(this, 'q11', 'A')"> A. Instead,</label><br>
-        <label><input type="radio" name="q11" onclick="storeAnswer(this, 'q11', 'B')"> B. Likewise,</label><br>
-        <label><input type="radio" name="q11" onclick="storeAnswer(this, 'q11', 'C')"> C. Finally,</label><br>
-        <label><input type="radio" name="q11" onclick="storeAnswer(this, 'q11', 'D')"> D. Additionally,</label>
-      </div>
-      
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-        <label><input type="checkbox" id="check-answer-box-q11" onclick="checkAnswer(this, 'q11', 'C')"> <span>✅ Check Answer</span></label>
-      </div> 
-      
-      <!-- Feedback message -->
-      <p id="feedback-message-q11" style="display: none;"></p>
-      
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-        <p>Choice C is the best answer. “Finally” logically signals that the bill passing—following many attempts between 1968 and 1983—is the final, concluding event in the sequence described in the previous sentences.</p>
-      </div>
-    </div>
-  </section>
-  
-  <section id="transition">
-    <div class="question-container">
-      <p>12. It has long been thought that humans first crossed a land bridge into the Americas approximately 13,000 years ago. 
-      ______ based on radiocarbon dating of samples uncovered in Mexico, a research team recently suggested that humans may have arrived more than 30,000 years ago—much earlier than previously thought. 
-      Which choice completes the text with the most logical transition?</p>
-      
-      <div class="options">
-        <label><input type="radio" name="q12" onclick="storeAnswer(this, 'q12', 'A')"> A. As a result,</label><br>
-        <label><input type="radio" name="q12" onclick="storeAnswer(this, 'q12', 'B')"> B. Similarly,</label><br>
-        <label><input type="radio" name="q12" onclick="storeAnswer(this, 'q12', 'C')"> C. However,</label><br>
-        <label><input type="radio" name="q12" onclick="storeAnswer(this, 'q12', 'D')"> D. In conclusion,</label>
-      </div>
-      
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-        <label><input type="checkbox" id="check-answer-box-q12" onclick="checkAnswer(this, 'q12', 'C')"> <span>✅ Check Answer</span></label>
-      </div> 
-      
-      <!-- Feedback message -->
-      <p id="feedback-message-q12" style="display: none;"></p>
-      
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-        <p>Choice C is the best answer. “However” logically signals that the theory discussed in this sentence—that humans may have arrived in the Americas over 30,000 years ago—contrasts with the previously discussed theory that humans arrived around 13,000 years ago.</p>
-      </div>
-    </div>
-  </section>
-  
-  <section id="transition">
-    <div class="question-container">
-      <p>13. Researchers believe that pieces of hull found off Oregon’s coast are from a Spanish cargo ship that was lost in 1697. 
-      Stories passed down among the area’s Confederated Tribes of Siletz Indians support this belief. 
-      ______ Siletz stories describe how blocks of beeswax, an item the ship had been carrying, began washing ashore after the ship was lost.  
-      Which choice completes the text with the most logical transition?</p>
-      
-      <div class="options">
-        <label><input type="radio" name="q13" onclick="storeAnswer(this, 'q13', 'A')"> A. For this reason,</label><br>
-        <label><input type="radio" name="q13" onclick="storeAnswer(this, 'q13', 'B')"> B. For example,</label><br>
-        <label><input type="radio" name="q13" onclick="storeAnswer(this, 'q13', 'C')"> C. However,</label><br>
-        <label><input type="radio" name="q13" onclick="storeAnswer(this, 'q13', 'D')"> D. Likewise,</label>
-      </div>
-      
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-        <label><input type="checkbox" id="check-answer-box-q13" onclick="checkAnswer(this, 'q13', 'B')"> <span>✅ Check Answer</span></label>
-      </div> 
-      
-      <!-- Feedback message -->
-      <p id="feedback-message-q13" style="display: none;"></p>
-      
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-        <p>Choice B is the best answer. “For example” logically signals that the Siletz beeswax stories mentioned in this sentence are examples consistent with the previous claim that Siletz stories support the shipwreck theory.</p>
-      </div>
-    </div>
-  </section>
-  
-  <section id="transition">
-    <div class="question-container">
-      <p>14. Alexander Lawrence Posey (1873–1908) varied his focus and tone depending on the genre in which he was writing. 
-      In his poetry, he used heartfelt language to evoke the beauty and peacefulness of his natural surroundings; 
-      in his journalism, ______ he employed humor and satire to comment on political issues affecting his Muskogee Creek community. 
-      Which choice completes the text with the most logical transition?</p>
-      
-      <div class="options">
-        <label><input type="radio" name="q14" onclick="storeAnswer(this, 'q14', 'A')"> A. that is,</label><br>
-        <label><input type="radio" name="q14" onclick="storeAnswer(this, 'q14', 'B')"> B. granted,</label><br>
-        <label><input type="radio" name="q14" onclick="storeAnswer(this, 'q14', 'C')"> C. similarly,</label><br>
-        <label><input type="radio" name="q14" onclick="storeAnswer(this, 'q14', 'D')"> D. by contrast,</label>
-      </div>
-      
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-        <label><input type="checkbox" id="check-answer-box-q14" onclick="checkAnswer(this, 'q14', 'D')"> <span>✅ Check Answer</span></label>
-      </div> 
-      
-      <!-- Feedback message -->
-      <p id="feedback-message-q14" style="display: none;"></p>
-      
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-        <p>Choice D is the best answer. This sentence compares two examples of Posey’s tone: the “heartfelt language” he used in his poetry versus the “humor and satire” he used in his journalism.</p>
-      </div>
-    </div>
-  </section>
-  
-  <section id="transition">
-    <div class="question-container">
-      <p>15. Geoscientists have long considered Hawaii’s Mauna Loa volcano to be Earth’s largest shield volcano by volume, 
-      measuring approximately 74,000 cubic kilometers. ______ according to a 2020 study by local geoscientist Michael Garcia, 
-      Hawaii’s Pūhāhonu shield volcano is significantly larger, boasting a volume of about 148,000 cubic kilometers. 
-      Which choice completes the text with the most logical transition?</p>
-      
-      <div class="options">
-        <label><input type="radio" name="q15" onclick="storeAnswer(this, 'q15', 'A')"> A. Secondly,</label><br>
-        <label><input type="radio" name="q15" onclick="storeAnswer(this, 'q15', 'B')"> B. Consequently,</label><br>
-        <label><input type="radio" name="q15" onclick="storeAnswer(this, 'q15', 'C')"> C. Moreover,</label><br>
-        <label><input type="radio" name="q15" onclick="storeAnswer(this, 'q15', 'D')"> D. However,</label>
-      </div>
-      
-      <!-- Checkbox to verify answer -->
-      <div class="check-answer">
-        <label><input type="checkbox" id="check-answer-box-q15" onclick="checkAnswer(this, 'q15', 'D')"> <span>✅ Check Answer</span></label>
-      </div> 
-      
-      <!-- Feedback message -->
-      <p id="feedback-message-q15" style="display: none;"></p>
-      
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-        <p>Choice D is the best answer. “However” logically signals that this sentence, which indicates that the Pūhāhonu volcano may be larger than the Mauna Loa volcano, offers a contrast to or refutation of the previous assumption that Mauna Loa is the largest shield volcano.</p>
-      </div>
-    </div>
-  </section>
-  <section id="transition">
-    <div class="question-container">
-        <p>16. Okot p’Bitek’s poem *Song of Lawino* (1966) explores postcolonial Ugandan life through the eyes of a woman living in a rural village. With its vibrant imagery, bitingly satiric tone, and dexterous use of traditional Acholi song and phraseology, the poem inspired a generation of East African writers. ______ those who adopted its style are often referred to as Okot School poets.
-        Which choice completes the text with the most logical transition?</p>
-        <div class="options">
-            <label><input type="radio" name="q16" onclick="storeAnswer(this, 'q16', 'A')"> A. Nevertheless,</label><br>
-            <label><input type="radio" name="q16" onclick="storeAnswer(this, 'q16', 'B')"> B. Fittingly,</label><br>
-            <label><input type="radio" name="q16" onclick="storeAnswer(this, 'q16', 'C')"> C. By comparison,</label><br>
-            <label><input type="radio" name="q16" onclick="storeAnswer(this, 'q16', 'D')"> D. Instead,</label>
-        </div>
-        <!-- Checkbox to verify answer -->
-        <div class="check-answer">
-            <label><input type="checkbox" id="check-answer-box-q16" onclick="checkAnswer(this, 'q16', 'B')"> <span>✅ Check Answer</span></label>
-        </div> 
-        <!-- Feedback message -->
-        <p id="feedback-message-q16" style="display: none;"></p>
-        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-        <div class="explanation" style="display:none;">
-            <p>Choice B is the best answer. “Fittingly” is appropriate here as it suggests that writers who adopted Okot p’Bitek’s style would naturally be referred to as Okot School poets.</p>           
-        </div>
-    </div>
-  </section>
-  
-  <section id="transition">
-    <div class="question-container">
-        <p>17. Before the 1847 introduction of the US postage stamp, the cost of postage was usually paid by the recipient of a letter rather than the sender, and recipients were not always able or willing to pay promptly. ______ collecting this fee could be slow and arduous, and heaps of unpaid-for, undeliverable mail piled up in post offices.
-        Which choice completes the text with the most logical transition?</p>
-        <div class="options">
-            <label><input type="radio" name="q17" onclick="storeAnswer(this, 'q17', 'A')"> A. Regardless,</label><br>
-            <label><input type="radio" name="q17" onclick="storeAnswer(this, 'q17', 'B')"> B. On the contrary,</label><br>
-            <label><input type="radio" name="q17" onclick="storeAnswer(this, 'q17', 'C')"> C. Consequently,</label><br>
-            <label><input type="radio" name="q17" onclick="storeAnswer(this, 'q17', 'D')"> D. For example,</label>
-        </div>
-        <!-- Checkbox to verify answer -->
-        <div class="check-answer">
-            <label><input type="checkbox" id="check-answer-box-q17" onclick="checkAnswer(this, 'q17', 'C')"> <span>✅ Check Answer</span></label>
-        </div> 
-        <!-- Feedback message -->
-        <p id="feedback-message-q17" style="display: none;"></p>
-        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-        <div class="explanation" style="display:none;">
-            <p>Choice C is the best answer. “Consequently” indicates the postal issues arose as a result of the fee system mentioned earlier.</p>           
-        </div>
-    </div>
-  </section>
-  
-  <section id="transition">
-    <div class="question-container">
-        <p>18. In Gothic architecture, flying buttresses are large arches that help support a building’s exterior walls. Before the Gothic era, cathedrals’ heavy ceilings had to be supported by thick, short walls, but the invention of flying buttresses eliminated this need. ______ Gothic cathedrals could be built with thinner, higher walls.
-        Which choice completes the text with the most logical transition?</p>
-        <div class="options">
-            <label><input type="radio" name="q18" onclick="storeAnswer(this, 'q18', 'A')"> A. Similarly,</label><br>
-            <label><input type="radio" name="q18" onclick="storeAnswer(this, 'q18', 'B')"> B. For instance,</label><br>
-            <label><input type="radio" name="q18" onclick="storeAnswer(this, 'q18', 'C')"> C. Nevertheless,</label><br>
-            <label><input type="radio" name="q18" onclick="storeAnswer(this, 'q18', 'D')"> D. As a result,</label>
-        </div>
-        <!-- Checkbox to verify answer -->
-        <div class="check-answer">
-            <label><input type="checkbox" id="check-answer-box-q18" onclick="checkAnswer(this, 'q18', 'D')"> <span>✅ Check Answer</span></label>
-        </div> 
-        <!-- Feedback message -->
-        <p id="feedback-message-q18" style="display: none;"></p>
-        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-        <div class="explanation" style="display:none;">
-            <p>Choice D is the best answer. “As a result” logically signals the consequence of flying buttresses being invented, allowing for thinner and taller cathedral walls.</p>           
-        </div>
-    </div>
-  </section>
-  
-  <section id="transition">
-    <div class="question-container">
-        <p>19. Tyrian purple was a highly prized dye among the Phoenicians (an ancient civilization located in present-day Lebanon). The Phoenicians were famous for using this natural dye to color their clothes a distinctive purple. ______ the name “Phoenicia” itself, some historians claim, may have originally meant “land of purple.”
-        Which choice completes the text with the most logical transition?</p>
-        <div class="options">
-            <label><input type="radio" name="q19" onclick="storeAnswer(this, 'q19', 'A')"> A. In fact,</label><br>
-            <label><input type="radio" name="q19" onclick="storeAnswer(this, 'q19', 'B')"> B. Regardless,</label><br>
-            <label><input type="radio" name="q19" onclick="storeAnswer(this, 'q19', 'C')"> C. Lastly,</label><br>
-            <label><input type="radio" name="q19" onclick="storeAnswer(this, 'q19', 'D')"> D. On the contrary,</label>
-        </div>
-        <!-- Checkbox to verify answer -->
-        <div class="check-answer">
-            <label><input type="checkbox" id="check-answer-box-q19" onclick="checkAnswer(this, 'q19', 'A')"> <span>✅ Check Answer</span></label>
-        </div> 
-        <!-- Feedback message -->
-        <p id="feedback-message-q19" style="display: none;"></p>
-        <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-        <div class="explanation" style="display:none;">
-            <p>Choice A is the best answer. “In fact” supports the idea that the name Phoenicia may have been inspired by their use of purple dye.</p>           
-        </div>
-    </div>
-  </section>
-  
-  <section id="transition">
-    <div class="question-container">
-        <p>20. Etched into Peru’s Nazca Desert are line drawings so large that they can only be fully seen from high above. Archaeologists have known of the lines since the 1920s, when a researcher spotted some from a nearby foothill, and they have been studying the markings ever since. ______ archaeologists’ efforts are aided by drones that capture high-resolution aerial photographs of the lines.
-        Which choice completes the text with the most logical transition?</p>
-        <div class="options">
-            <label><input type="radio" name="q20" onclick="storeAnswer(this, 'q20', 'A')"> A. Currently,</label><br>
-            <label><input type="radio" name="q20" onclick="storeAnswer(this, 'q20', 'B')"> B. In comparison,</label><br>
-            <label><input type="radio" name="q20" onclick="storeAnswer(this, 'q20', 'C')"> C. Still,</label><br>
-            <label><input type="radio" name="q20" onclick="storeAnswer(this, 'q20', 'D')"> D. However,</label>
-        </div>
-       <!-- Checkbox to verify answer -->
-       <div class="check-answer">
-        <label><input type="checkbox" id="check-answer-box-q19" onclick="checkAnswer(this, 'q20', 'A')"> <span>✅ Check Answer</span></label>
-    </div> 
-    <!-- Feedback message -->
-    <p id="feedback-message-q20" style="display: none;"></p>
-    <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-    <div class="explanation" style="display:none;">
-        <p>Choice A is the best answer. “Currently” logically signals that the archaeologists’ use of drones (a current technology) to photograph the lines is the present-day continuation of the ongoing archaeological research described in the previous sentence.</p>           
-    </div>
-</div>
-</section>
-  
-  
-  
-
-
-
-  
-
-
-  <!-- Student Note Section -->
-  <section id="student-note">
-    <h2>Student Note</h2>
-    <div class="question-container">
-      <p>1.While researching a topic, a student has taken the following notes: Oracles of the Pink Universe was a 2021 exhibition at the Denver Museum of Art in Colorado. 
-        It featured eight artworks by South African artist Simphiwe Ndzube. 
-        One of these works is a painting titled Assertion of Will. 
-        Assertion of Will depicts three standing figures. 
-        The figures wear clothing made of fabric pieces stitched to the painting’s canvas. 
-        The student wants to describe how fabric is used in Assertion of Will.
-        <strong>Which choice most effectively uses relevant information from the notes to accomplish this goal?</strong></p>
-      <div class="options">
-        <label><input type="radio" name="q2" onclick="checkAnswer(this, 'A')"> A. In Assertion of Will...</label><br>
-        <label><input type="radio" name="q2" onclick="checkAnswer(this, 'A')"> B. The exhibition Oracles...</label><br>
-        <label><input type="radio" name="q2" onclick="checkAnswer(this, 'A')"> C. Depicting three...</label><br>
-        <label><input type="radio" name="q2" onclick="checkAnswer(this, 'A')"> D. Simphiwe Ndzube’s...</label>
-      </div>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-        <p>Explanation: Choice A is the best answer. This directly describes how fabric is used in Assertion of Will...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Boundaries Section -->
-  <section id="boundaries">
-    <h2>Boundaries</h2>
-    <div class="question-container">
-      <p>1. Generations of mystery and horror ______ have been influenced by the dark, gothic stories of Edgar Allan Poe...</p>
-      <div class="options">
-        <label><input type="radio" name="q3" onclick="checkAnswer(this, 'A')"> A. writers</label><br>
-        <label><input type="radio" name="q3" onclick="checkAnswer(this, 'A')"> B. writers,</label><br>
-        <label><input type="radio" name="q3" onclick="checkAnswer(this, 'A')"> C. writers—</label><br>
-        <label><input type="radio" name="q3" onclick="checkAnswer(this, 'A')"> D. writers;</label>
-      </div>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-        <p>Explanation: Choice A is the best answer...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Form, Structure, and Sense Section -->
-  <section id="form-structure-sense">
-    <h2>Form, Structure, and Sense</h2>
-    <div class="question-container">
-      <p>1. The radiation that ______ during the decay of radioactive atomic nuclei is known as gamma radiation.</p>
-      <div class="options">
-        <label><input type="radio" name="q4" onclick="checkAnswer(this, 'A')"> A. occurs</label><br>
-        <label><input type="radio" name="q4" onclick="checkAnswer(this, 'A')"> B. have occurred</label><br>
-        <label><input type="radio" name="q4" onclick="checkAnswer(this, 'A')"> C. occur</label><br>
-        <label><input type="radio" name="q4" onclick="checkAnswer(this, 'A')"> D. are occurring</label>
-      </div>
-      <button class="explanation-btn" onclick="showExplanation(this)">Show Explanation</button>
-      <div class="explanation" style="display:none;">
-        <p>Explanation: Choice A is the best answer. The singular verb "occurs" agrees in number with the singular subject "radiation".</p>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-  <section id="feedback-section">
-    <div class="feedback-container">
-        <h2>Feedback Form</h2>
-        <form id="feedbackForm" action="/submit" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="cephasbonsuosei001@gmail.com" required>
-
-            <label for="feedback">What should we improve on the SAT website?</label>
-            <textarea id="feedback" name="feedback" rows="5" placeholder="Write your suggestions here..." required></textarea>
-
-            <button type="submit">Submit Feedback</button>
-        </form>
-    </div>
-</section>
-
-
-
-  <script>let selectedAnswers = {}; // Store selected answers for each question
-    let attemptCounts = {};   // Store attempt counts for each question
-    
-    function storeAnswer(option, questionId, correctAnswer) {
-        const options = option.closest('.options').querySelectorAll('input');
         
-        // Deselect other options
-        options.forEach(opt => {
-            opt.checked = false;
-        });
+    </section>
     
-        // Set the selected answer for the specific question
-        option.checked = true;
-        selectedAnswers[questionId] = option.parentNode.textContent.trim().charAt(0);
-    }
-    
-    function checkAnswer(checkbox, questionId, correctAnswer) {
-        const feedbackMessage = document.getElementById(`feedback-message-${questionId}`);
-        const options = document.querySelectorAll(`input[name="${questionId}"]`);
+    <section id="certifications">
+        <h2>Certifications and Achievements</h2>
         
-        // Initialize attempt count if it doesn't exist for this question
-        if (!attemptCounts[questionId]) {
-            attemptCounts[questionId] = 0;
-        }
-    
-        if (checkbox.checked && selectedAnswers[questionId] !== null) {
-            if (selectedAnswers[questionId] === correctAnswer) {
-                feedbackMessage.textContent = "🎉 Congratulations! You selected the correct answer.";
-                feedbackMessage.style.color = "green";
-                feedbackMessage.style.display = "block";
-    
-                // Disable all options after the correct answer
-                options.forEach(opt => {
-                    opt.disabled = true;
-                });
-    
-                checkbox.disabled = true; // Disable checkbox after correct answer
-                attemptCounts[questionId] = 0; // Reset attempt counter for this question after correct answer
-            } else {
-                attemptCounts[questionId]++; // Increment attempt counter for this question
-                if (attemptCounts[questionId] === 1) {
-                    feedbackMessage.textContent = "❌ Incorrect. Try again!";
-                    feedbackMessage.style.color = "red";
-                } else if (attemptCounts[questionId] === 2) {
-                    feedbackMessage.textContent = "🙌 Keep your head up, you're almost there!";
-                    feedbackMessage.style.color = "orange";
-                } else if (attemptCounts[questionId] === 3) {
-                    feedbackMessage.textContent = "🚫 Nope, try one more time!";
-                    feedbackMessage.style.color = "red";
-                    attemptCounts[questionId] = 0; // Reset after third attempt to allow retry
-                }
-                feedbackMessage.style.display = "block";
-    
-                // Allow retry by unchecking the checkbox
-                checkbox.checked = false;
-            }
-        }
-    }
-    
-    
-    function showExplanation(button) {
-    const explanation = button.nextElementSibling;
-    explanation.style.display = explanation.style.display === "none" ? "block" : "none";
-  }
-    
-  </script>
-  <footer id="site-footer">
-    <div class="footer-content">
-        <div class="footer-text">
-            <p class="tagline">CKODON FOUNDATION 24</p>
-            <p class="subtitle">Impossibility Our Specialty</p>
-            <p>Empowering communities for a brighter future</p>
+        <div class="certification-category">
+            <h3>Academic Achievements</h3>
+            <div class="certificate">
+                <img src="https://i.imgur.com/thcFp5t.jpeg" alt="Best Physics Student Certificate">
+                <div class="certificate-info">
+                    <h4><i class="fas fa-trophy"></i> Best Physics Student</h4>
+                    <p>Awarded for outstanding academic performance in physics.</p>
+                </div>
+            </div>
         </div>
-        <div class="footer-links">
-            <p class="footer-note">Powered by CKODON FOUNDATION 24</p>
+        
+        <div class="certification-category">
+            <h3>Participation and Honors</h3>
+            <div class="certificate">
+                <img src="https://i.imgur.com/qAHQ8NS.png" alt="NASA SPACE APP AWARD">
+                <div class="certificate-info">
+                    <h4><i class="fas fa-medal"></i> NASA SPACE APP AWARD</h4>
+                    <p>In recognition of providing innovative and impactful solutions using NASA's open data to address real-world challenges in space exploration, Earth science, and technology,
+                         while promoting collaboration and scalable ideas that can benefit humanity</p>
+                </div>
+            </div>
+        </div>
+        <div class="certification-category">
+            <h3>Participation and Honors</h3>
+            <div class="certificate">
+                <img src="https://i.imgur.com/v0i2TkN.png" alt="SRC IN UNITY AWARD">
+                <div class="certificate-info">
+                    <h4><i class="fas fa-medal"></i> SRC IN UNITY AWARD</h4>
+                    <p>Awarded as an outstanding contribution to the SRC community</p>
+                </div>
+            </div>
+            <div class="certification-category">
+                <h3>Course completion and problem solving</h3>
+                <div class="certificate">
+                    <img src="https://i.imgur.com/nY3UxIU.jpeg" alt="Development & Advanced
+                    Engineering Job Simulation">
+                    <div class="certificate-info">
+                        <h4><i class="fas fa-medal"></i> DEVELOPMENT AND ADVANCED ENGINEERING</h4>
+                        <p>Awarded for completing and soving a challenge in Object-Oriented Programming (OOP), Code Refactoring, Continuous Integration (CI), and
+                            Agile Planning, in Development & Advanced Engineering Job Simulation </p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <img src="https://i.imgur.com/V3t5BMn.jpg" alt="ALGFRED" class="project-img">
+            <h3>ALGFRED</h3>
+            <p>I created an ALGFRED (Automatic Length Gauging Flexible Rod Equipment Device) for my junior high school to overcome difficulties in measuring object heights. This innovative device simplifies the process, making it easier for students to accurately measure and record heights, enhancing their learning experience.</p>
+        </div>
+
+        <div class="project">
+            <img src="https://imgur.com/2oN9JVh.jpg" alt="Smoke Detector" class="project-img">
+            <h3>Smoke Detector</h3>
+            <p>I developed a project to combat frequent fire outbreaks in my community. This device ensures community safety through seamless communication using Arduino, smoke sensor, GSM, and LCD. It delivers prompt SMS notifications when detecting smoke, saving lives and preventing property damage with proven favorable consequences.</p>
+        </div>
+
+        <div class="project">
+            <img src="https://imgur.com/OobbkJ2.jpg" alt="Automatic Water Dispenser" class="project-img">
+            <h3>Automatic Water Dispenser</h3>
+            <p>During COVID-19, I created an automated water dispenser for my school, providing a safe, touchless handwashing experience. By eliminating shared tap contact, I helped prevent virus transmission, potentially saving thousands of students' lives. Observing shared tap risks, I built this vital solution to preserve our school community's health and well-being, promoting a safer environment for all, and safeguarding against future pandemics.</p>
+        </div>
+
+        <div class="project">
+            <img src="https://imgur.com/qffb4kG.jpg" alt="Smart Dustbin" class="project-img">
+            <h3>Smart Dustbin</h3>
+            <p>My friend and I created an automated dustbin for our community library to address littering and promote sustainability. Using sensors and motors, it opens its lid when approached, encouraging convenient disposal and a clean environment. The design has made it a favorite among students, improving library sanitation. Our project showcases cooperation and creativity in tackling real-world challenges, fostering community well-being and promoting a cleaner environment.</p>
+        </div>
+
+        <div class="project">
+            <img src="https://imgur.com/JPjf0dR.jpg" alt="Smart Door System" class="project-img">
+            <h3>Smart Door System</h3>
+            <p>I developed a smart door system using Arduino, servo motor, RFID reader, locker, and buzzer. The door opens automatically after successful RFID scanning. If an illegal attempt occurs, the system alerts with an audible alarm. I created this project to improve security, driven by my passion for invention and commitment to building a better world.</p>
+        </div>
+
+        <div class="project">
+            <img src="https://i.imgur.com/eqkOVzs.jpg" alt="H20HopeHorizon" class="project-img">
+            <h3>H20HopeHorizon</h3>
+            <p>As founder, I address marginalized communities' pressing issues by providing clean water access. We empower future generations, improving health, hygiene, education, and economic growth. Our vision: a world where everyone has clean water access, regardless of background.</p>
         </div>
     </div>
-</footer>
+</section>
 
-</body>
-</html> 
+    </div>
+    <section id="video-demonstration">
+        <h2>Video Demonstration</h2>
+        <div class="projects-container">
+            <div class="project">
+                <h3>ALGFRED</h3>
+                <div class="video-container">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/994299968?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="ALGFRED"></iframe>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="project">
+                <h3>Smoke Detector</h3>
+                <div class="video-container">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/985361158?badge=0&autopause=0&player_id=0&app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Smoke Detector"></iframe>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="project">
+                <h3>Automatic Water Dispenser</h3>
+                <div class="video-container">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1009156595?badge=0&autopause=0&player_id=0&app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Smart Dustbin"></iframe>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="project">
+                <h3>Smart Dustbin</h3>
+                <div class="video-container">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/994302125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Smart Dustbin"></iframe>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="project">
+                <h3>Smart Door System</h3>
+                <div class="video-container">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/994304190?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Smart Door System"></iframe>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="project">
+                <h3>H20HopeHorizon</h3>
+                <div class="video-container">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/994299968?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="H20HopeHorizon"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="research-paper">
+            <div class="research-container">
+                <h2>Smart Shoe System for Obstacle Detection and Guidance</h2>
+                
+                <div class="abstract">
+                    <h3>Abstract</h3>
+                    <p>This research explores the design and implementation of a smart shoe system to aid visually impaired individuals by detecting obstacles using microcontrollers and sensors. The system integrates ultrasonic and infrared sensors to provide real-time feedback via Bluetooth earpieces.</p>
+                </div>
+        
+                <div class="introduction">
+                    <h3>Introduction</h3>
+                    <p>For visually challenged people, safely navigating dynamic surroundings is rather difficult. Although they provide simple tactile input, traditional mobility aids like canes are not very good at identifying objects that are not exactly in front of the user or far away. This work presents a smart shoe system combining microcontroller technology, sensor integration, and wireless connection to deliver real-time input for obstacle identification and navigation, thereby addressing these constraints.</p>
+            <p>Along with ultrasonic and infrared (IR) sensors, the suggested smart shoe uses reasonably priced and easily available technologies such as Arduino and Raspberry Pi to provide a complete solution for safe navigation. This work aims to create a wearable device using Bluetooth earphones that improves mobility, lowers accidents, and offers an easy user experience by means of auditory signals.</p>
+                </div>
+        
+                <div class="literature-review">
+                    <p>Especially in the field of obstacle detection, wearable assistive devices have developed dramatically recently. Current options include smart glasses, wearable belts with sensors that offer tactile or aural input, and electronic canes. In complicated settings, these tools can lack comfort, simplicity of use, or accuracy, however.</p>
+                    <p>Research on low-cost, adaptable, and efficient prototypes for assistive devices has extensively embraced microcontrollers like Arduino and Raspberry Pi. For instance, ultrasonic sensors and vibration feedback systems have been used in designs for smart shoes with simple obstacle-detecting powers. These designs can lack directionality and the capacity to differentiate between different kinds of barriers, including fixed and moving items, or ground-level dangers like pits.</p>
+                    <p>By adding cutting-edge technologies such as multi-directional obstacle detection, real-time Bluetooth connection, and a decision-making algorithm to provide the user clear, practical auditory instructions, this study seeks to expand upon already existing concepts.</p>
+                    </div>
+        
+                <a href="https://www.researchgate.net/publication/383751191_Microcontroller_and_Sensor-Based_Smart_Shoe_Development_for_Obstacle_Detection_and_Guidance" target="_blank" class="research-link">
+                    Full Research Paper
+                </a>
+        
+                <div class="details">
+                    <h3>System Architecture</h3>
+                    <p>The system architecture combines various hardware and software components to deliver real-time obstacle detection and guidance.</p>
+                    <img src="https://i.imgur.com/Ij5gCns.png" alt="System Architecture Diagram" class="diagram">
+        
+                    <h3>Software Components</h3>
+                    <p>The software includes data filtering, obstacle detection algorithms, decision-making systems, and Bluetooth communication.</p>
+                    <img src="https://i.imgur.com/fOEEYLt.png" alt="Software Architecture Diagram" class="diagram">
+        
+                    <h3>Data Flow</h3>
+                    <p>The data flow consists of sensor input, data processing, decision-making, and audio output to guide the user.</p>
+                    <img src="https://i.imgur.com/SOhYm7R.png" alt="Data Flow Diagram" class="diagram">
+                </div>
+        
+                <div class="future-work">
+                    <h3>Future Work</h3>
+                    <p>Future enhancements include integrating advanced sensors, improving machine learning algorithms for better obstacle detection, and refining user interface feedback mechanisms to further improve user experience.</p>
+                </div>
+        
+                <div class="references">
+                    <h3>References</h3>
+                    <ul>
+                        <li>Chandekar, T., et al. (2017). Implementation of obstacle detection and navigation system for visually impaired using smart shoes. <i>International Research Journal of Engineering and Technology (IRJET)</i>, 4(4), pp. 2125-2129.</li>
+                        <li>Chandekar, Tejal, et al. "Implementation of obstacle detection and navigation system for visually impaired using smart shoes." <i>IRJET</i> 4.4 (2017): 2125-2129.</li>
+                        <li>Chandekar, T., Chouhan, R., Gaikwad, R., Gosavi, H., & Darade, S. (2017). Implementation of obstacle detection and navigation system for visually impaired using smart shoes. <i>IRJET</i>, 4(4), 2125-2129.</li>
+                        <li>Chandekar, T., Chouhan, R., Gaikwad, R., Gosavi, H. and Darade, S., 2017. Implementation of obstacle detection and navigation system for visually impaired using smart shoes. <i>IRJET</i>, 4(4), pp.2125-2129.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact-container">
+                <h2>Contact Me</h2>
+                
+                <form action="mailto:cephasbonsuosei001@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+        
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-container">
+              <div class="social-media">
+                <a href="http://Wa.me/+233551560593" target="_blank" class="social-link">
+                  <img src="https://th.bing.com/th?q=Whats+App+Icon.png&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-WW&cc=GH&setlang=en&adlt=moderate&t=1&mw=247" alt="WhatsApp" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/cephas-bonsu-911731326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-link">
+                  <img src="https://th.bing.com/th/id/OIP.8OUQAzOlhtNkOtZIHKd_lwHaHa?w=148&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.tiktok.com/@faithfulness_0551?_t=8pWjhKf4kju&_r=1" target="_blank" class="social-link">
+                  <img src="https://th.bing.com/th/id/OIP.10UYWgiyV3HSOvt-AZLl0QHaHa?rs=1&pid=ImgDetMain" alt="TikTok" class="social-icon">
+                </a>
+              </div>
+              <p>&copy; 2024 Osei-Bonsu Cephas. All Rights Reserved.</p>
+            </div>
+          </footer>
+          
+        
+    </body>
+</html>
