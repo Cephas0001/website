@@ -3,984 +3,1127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INNOVATEX - OSEI-BONSU CEPHAS Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>H20HopeHorizon - Clean Water for All</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --secondary: #34a853;
+            --accent: #ff9900;
+            --dark: #0d2d5e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --text: #333333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: #e68a00;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--dark);
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+        }
+
+        .nav-menu a {
+            color: var(--text);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background: linear-gradient(rgba(13, 45, 94, 0.7), rgba(13, 45, 94, 0.8)), url('https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: white;
+        }
+
+        .mission-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .mission-text {
+            flex: 1;
+        }
+
+        .mission-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* Impact Section */
+        .impact {
+            background: #f9f9f9;
+        }
+
+        .impact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .impact-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Team Section */
+        .team {
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-img {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .team-img img {
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .team-info p {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(rgba(13, 45, 94, 0.8), rgba(13, 45, 94, 0.8)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: white;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .testimonial h4 {
+            color: var(--accent);
+        }
+
+        /* Donate Section */
+        .donate {
+            background: var(--light);
+            text-align: center;
+        }
+
+        .donate-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 20px;
+            background: white;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: #f9f9f9;
+            padding: 80px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Volunteer Section */
+        .volunteer {
+            background: #f9f9f9;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .mission-content {
+                flex-direction: column;
+            }
+            
+            .mission-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                height: calc(100vh - 80px);
+                padding: 40px;
+                box-shadow: var(--shadow);
+                transition: 0.5s;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+
+            .team-grid, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f7f9; /* Light background */
-}
-
-.background-img {
-    width: 100%;
-    height: 400px; /* Increased height */
-    object-fit: cover;
-    filter: brightness(75%); /* Slightly darkened to make text pop */
-}
-
-.profile-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff; /* White background for contrast */
-    margin-top: -150px;
-    z-index: 1;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid #007bff; /* Blue border around profile picture */
-    margin-top: -75px;
-}
-
-h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #004080; /* Dark blue for heading */
-}
-
-h2 {
-    margin: 10px 0;
-    font-size: 1.8em;
-    color: #007bff; /* Primary blue for subheadings */
-}
-
-p {
-    margin: 10px 0;
-    line-height: 1.6;
-    color: #555; /* Gray for body text */
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.about-me, .interests, .skills, .projects {
-    padding: 20px;
-    background-color: #f8f9fa;
-    margin: 20px 0;
-    border-radius: 10px;
-    border-left: 5px solid #007bff; /* Blue accent on the left */
-}
-
-.interests ul, .skills ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.interests li, .skills li {
-    background-color: #e9ecef;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    color: #004080; /* Dark blue text */
-    font-weight: bold;
-}
-
-/* Projects Section */
-#projects {
-    padding: 20px;
-    background-color: #f8f9fa;
-}
-
-#projects h2 {
-    text-align: center;
-    color: #333; /* Standard gray */
-    margin-bottom: 20px; /* Space between heading and projects */
-}
-
-/* Project section grid layout */
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.project {
-    flex: 1 1 calc(33.333% - 20px); /* Three projects per row */
-    box-sizing: border-box;
-    background-color: #fff; /* Add a background color */
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.project-img {
-    width: 100%;
-    height: 180px; /* Adjusted height for consistency */
-    object-fit: cover; /* Ensures images cover the container */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.project h3 {
-    margin: 15px 0 10px;
-    font-size: 1.5em;
-    color: #007aec; /* Standard gray */
-    text-align: center;
-}
-
-.project p {
-    margin: 10px 0;
-    line-height: 1.4;
-    color: #555;
-    text-align: center;
-    flex-grow: 1;
-}
-
-/* Responsive layout for smaller screens */
-@media screen and (max-width: 768px) {
-    .project {
-        flex: 1 1 100%; /* Stack projects on smaller screens */
-    }
-}
-/* Video Demonstration Section */
-#video-demonstration {
-    padding: 50px;
-    background-color: #f4f7f9; /* Light background */
-}
-
-#video-demonstration h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #004080; /* Dark blue for heading */
-}
-
-#video-demonstration .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-#video-demonstration .project {
-    background-color: #ffffff; /* White background */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    flex-basis: calc(50% - 20px); /* Two videos per row */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-#video-demonstration h3 {
-    margin: 15px 0 10px;
-    font-size: 1.5em;
-    color: #007bff; /* Blue for subheadings */
-    text-align: center;
-}
-
-#video-demonstration .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    background: #000;
-}
-
-#video-demonstration .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    #video-demonstration .project {
-        flex-basis: 100%; /* Stack videos on smaller screens */
-    }
-}
-/* General Section Styling */
-#certifications {
-    padding: 40px;
-    background-color: #f8f9fa;
-    margin: 20px 0;
-    border-radius: 10px;
-    border-left: 5px solid #007bff; /* Blue accent on the left */
-}
-
-#certifications h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-/* Styling for certification categories */
-.certification-category {
-    margin: 30px 0;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-left: 5px solid #007bff; /* Blue accent on the left */
-    border-radius: 10px;
-}
-
-/* Styling for individual certificates */
-.certificate {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #e9ecef;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.certificate img {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
-    border-radius: 5px;
-}
-
-/* Certificate info styling */
-.certificate-info {
-    text-align: left;
-}
-
-.certificate-info h4 {
-    font-size: 1.25em;
-    margin-bottom: 10px;
-    color: #004080; /* Dark blue text */
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.certificate-info h4 i {
-    color: #FFD700;
-    margin-right: 10px;
-}
-
-.certificate-info p {
-    color: #666;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .certificate {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .certificate img {
-        margin-bottom: 15px;
-    }
-}
-/* Achievements Section Styling */
-#achievements {
-    padding: 40px;
-    background-color: #f8f9fa;
-    margin: 20px 0;
-    border-radius: 10px;
-    border-left: 5px solid #007bff; /* Blue accent on the left */
-}
-
-#achievements h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-}
-
-.achievements-container {
-    margin: 0 auto;
-    max-width: 800px;
-}
-
-.achievements-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.achievements-list li {
-    background-color: #e9ecef;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    color: #004080; /* Dark blue text */
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #achievements {
-        padding: 20px;
-    }
-
-    .achievements-list li {
-        font-size: 0.9em;
-        padding: 10px;
-    }
-}
-/* Research Paper Section */
-#research-paper {
-    background-color: #f9f9f9;
-    padding: 30px 20px; /* Increased padding for more space */
-    margin: 20px 10px; /* Reduced side margins for a bit more width */
-    border-radius: 10px;
-    border-left: 5px solid #007bff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.research-container {
-    max-width: 100%; /* Full width with container centering */
-    margin: 0 auto; /* Center the container */
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-}
-
-/* Headings */
-h2 {
-    text-align: center;
-    font-size: 2.7rem; /* Slightly increased size */
-    color: #333;
-    margin-bottom: 25px; /* More space below heading */
-}
-
-h3 {
-    font-size: 1.6rem; /* Slightly increased size */
-    color: #444;
-    margin-top: 25px; /* More space above heading */
-    margin-bottom: 15px; /* More space below heading */
-}
-
-p {
-    font-size: 1.05rem; /* Slightly increased font size */
-    color: #666;
-    line-height: 1.7; /* Increased line height for better readability */
-}
-
-/* Research Paper Link */
-.research-link {
-    display: block;
-    text-align: center;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    padding: 14px 22px; /* Increased padding */
-    margin: 25px auto; /* Adjusted margin for more spacing */
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.research-link:hover {
-    background-color: #0056b3;
-}
-
-/* Diagrams - Adjusted Sizes */
-.diagram {
-    display: block;
-    width: 100%;
-    max-width: 650px; /* Slightly increased max-width */
-    margin: 20px auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .diagram {
-        max-width: 550px; /* Adjusted size for tablet screens */
-    }
-}
-
-@media (max-width: 767px) {
-    .diagram {
-        max-width: 400px; /* Adjusted size for mobile screens */
-    }
-
-    h2 {
-        font-size: 2.2rem; /* Adjusted heading size on mobile */
-    }
-
-    h3 {
-        font-size: 1.4rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-}
-
-/* Future Work and References Sections */
-.future-work {
-    margin-top: 35px; /* Increased margin-top */
-    padding-top: 25px; /* Increased padding-top */
-    border-top: 1px solid #ddd;
-}
-
-.references ul {
-    list-style-type: disc;
-    padding: 0 20px;
-}
-
-.references ul li {
-    font-size: 1rem; /* Adjusted font size */
-    color: #444;
-    margin-bottom: 12px; /* Increased spacing between list items */
-}
-
-.references ul i {
-    font-style: italic;
-}
-
-#contact {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-}
-
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#contact {
-    padding: 20px;
-    background-color: #f8f9fa;
-    margin: 20px 0;
-    border-radius: 10px;
-    border-left: 5px solid #007bff; /* Blue accent on the left */
-}
-
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 8px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.submit-button {
-    display: block;
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.submit-button:hover {
-    background-color: #0056b3;
-}
-/* Footer Section */
-.footer-container {
-    text-align: center;
-    width: 100%; /* Extend full width */
-    padding: 10px 0;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
-}
-
-.social-link {
-    display: inline-block;
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.social-icon:hover {
-    transform: scale(1.1);
-}
-
-footer p {
-    font-size: 0.9em;
-    color: #050505;
-}
-
-/* Responsive layout for footer */
-@media screen and (max-width: 768px) {
-    .social-media {
-        flex-direction: row; /* Keep icons in a single row */
-        flex-wrap: wrap; /* Allow wrapping if needed */
-        gap: 10px;
-    }
-
-    .social-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .footer-container {
-        padding: 5px 10px; /* Reduce padding on mobile */
-    }
-}
-.future-plans {
-    padding: 20px;
-    background-color: #f8f9fa;
-    margin: 20px 0;
-    border-radius: 10px;
-    border-left: 5px solid #007bff; /* Blue accent on the left */
-}
-
-.future-plans h2 {
-    color: #004080; /* Dark blue */
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.plan-section {
-    background-color: #e9ecef;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-}
-
-.plan-section h3 {
-    color: #004080; /* Dark blue */
-    font-weight: bold;
-}
-
-.plan-section p {
-    font-size: 16px;
-    color: #333; /* Darker gray for readability */
-}
-
-
-</style>
 <body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://i.imgur.com/xbjoy74.jpeg" alt="H20HopeHorizon Logo">
+                <div class="logo-text">
+                    <h1>H20HopeHorizon</h1>
+                    <p>Quenching thirst, empowering communities</p>
+                </div>
+            </div>
 
-    <!-- Background Image -->
-    <div class="background-img">
-        <img src="https://sweagro.com/wp-content/uploads/2024/06/AdobeStock_728648201-scaled.jpg" alt="Background Image" class="background-img">
-    </div>
-
-    <!-- Profile Section -->
-    <div class="profile-container">
-        <img src="https://imgur.com/TAN04fH.png" alt="Profile Picture" class="profile-pic">
-        <h1>Osei-Bonsu Cephas</h1>
-        <h2>Major: Electrical Engineering</h2>
-        <p>I am drawn to Electronics, with a specific focus on Intelligent Robotics and Environmental Sustainability. My goal is to leverage my expertise to drive positive change in two critical sectors: transportation and environmental sustainability. I envision developing innovative robotic systems that transform transportation by enhancing safety, efficiency, and sustainability through autonomous vehicles and intelligent traffic management.</p>
-        <p><strong>Contact:</strong> cephasoseib001@gmail.com</p>
-    </div>
-
-    <!-- About Me Section -->
-    <div class="about-me">
-        <h2>About Me</h2>
-        <p>I’m Osei-Bonsu Cephas, a proud General Science graduate from Konongo Odumase Senior High School. Curiosity has always been my compass, guiding me to explore the unknown and challenge myself to uncover the ‘why’ behind everything I encounter. With an unquenchable thirst for knowledge, I see every day as an opportunity to learn and grow. As a passionate tech enthusiast, I’m driven by a bigger purpose: to harness the power of technology in ways that protect our planet and ensure a sustainable future for generations to come</p>
-    </div>
-
-    <!-- Interests Section -->
-    <div class="interests">
-        <h2>Interests</h2>
-        <ul>
-            <li>STEM Education</li>
-            <li>Climate Change</li>
-            <li>Robotics</li>
-            <li>Machine Learning</li>
-            <li>Research</li>
-            <li>Green Technology</li>
-            <li>Internet of Things</li>
-            <li>Artificial Intelligence</li>
-            <li>sustainable Technology</li>
-        </ul>
-    </div>
-
-    <!-- Skills Section -->
-    <div class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Organization</li>
-            <li>Coordination</li>
-            <li>Persuasive Public Speaking</li>
-            <li>Computational Thinking</li>
-            <li>Arduino</li>
-            <li>Python</li>
-            <li>C++</li>
-            <li>Leadership & Creativity</li>
-            <li>Web Development</li>
-
-        </ul>
-    </div>
-    <section id="achievements">
-        <div class="achievements-container">
-            <h2>Achievements and Accolades</h2>
-            <ul class="achievements-list">
-                <li>Regional Trailblazer in STEM Innovation and Entrepreneurship</li>
-                <li>SCIENCETIA INTEGRALIS AWARD</li>
-                <li>PARAGON OF SCHOLARSHIP AWARD</li>
-                <li>SRC UNITY IN ACTION AWARD</li>
-                <li>NexGen Innovator Award</li>
-                <li>Intellecta Honors Championship</li>
-                <li>Raised awareness about water conservation and provided access to clean water for underprivileged communities, benefiting various communities through outreach programs, filtration system installations, and water donation drives</li>
+            <ul class="nav-menu">
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-        <div class="future-plans">
-            <h2>Future Plans and Ambition</h2>
-            <div class="plan-section">
-                <h3>1. Mitigating Weather Conditions and Air Quality</h3>
-                <p>I aim to build systems that can mitigate changes in weather conditions, monitor air quality, and provide solutions to protect the planet and generations to come.</p>
-            </div>
-            <div class="plan-section">
-                <h3>2. Improving Telemedicine and Renewable Energy</h3>
-                <p>My goal is to improve telemedicine infrastructure and develop renewable energy solutions to ensure hospitals have a sustainable power supply, improving healthcare outcomes.</p>
-            </div>
-            <div class="plan-section">
-                <h3>3.Disaster Preparedness and Recovery</h3>
-                <p> I aim to design disaster-resilient energy systems that ensure power supply during natural disasters. This includes setting up off-grid power 
-                    solutions like solar and wind energy that continue functioning when centralized grids are disrupted.</p>
-            </div>
-            <div class="plan-section">
-                <h3>3.Food Security and Automation in Agriculture</h3>
-                <p>Precision Agriculture: Making Robos, drones, and IoT sensors that can be deployed in farming to create precision agriculture systems. These systems use data on soil quality, weather,
-                     and crop health to optimize irrigation, fertilization, and pesticide use, reducing resource consumption while increasing yields</p>
-            </div>
-            <div class="plan-section">
-                <h3>4.Sustainable Transportation</h3>
-                <p> developement of EVs and their charging infrastructure. Automated battery 
-                    management systems ensure optimal performance and longevity, reducing the carbon footprint of transportation.</p>
-            </div>
-            <div class="plan-section">
-                <h3>5.Biodiversity Loss and Habitat Destruction</h3>
-                <p>Conservation Drones: Drones equipped with sensors can be used for wildlife monitoring and habitat protection. These drones can track endangered species, 
-                    monitor illegal deforestation, and assess environmental changes over time.</p>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-        
-    </section>
-    
-    <section id="certifications">
-        <h2>Certifications and Achievements</h2>
-        
-        <div class="certification-category">
-            <h3>Academic Achievements</h3>
-            <div class="certificate">
-                <img src="https://i.imgur.com/thcFp5t.jpeg" alt="Best Physics Student Certificate">
-                <div class="certificate-info">
-                    <h4><i class="fas fa-trophy"></i> Best Physics Student</h4>
-                    <p>Awarded for outstanding academic performance in physics.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="certification-category">
-            <h3>Participation and Honors</h3>
-            <div class="certificate">
-                <img src="https://i.imgur.com/qAHQ8NS.png" alt="NASA SPACE APP AWARD">
-                <div class="certificate-info">
-                    <h4><i class="fas fa-medal"></i> NASA SPACE APP AWARD</h4>
-                    <p>In recognition of providing innovative and impactful solutions using NASA's open data to address real-world challenges in space exploration, Earth science, and technology,
-                         while promoting collaboration and scalable ideas that can benefit humanity</p>
-                </div>
-            </div>
-        </div>
-        <div class="certification-category">
-            <h3>Participation and Honors</h3>
-            <div class="certificate">
-                <img src="https://i.imgur.com/v0i2TkN.png" alt="SRC IN UNITY AWARD">
-                <div class="certificate-info">
-                    <h4><i class="fas fa-medal"></i> SRC IN UNITY AWARD</h4>
-                    <p>Awarded as an outstanding contribution to the SRC community</p>
-                </div>
-            </div>
-            <div class="certification-category">
-                <h3>Course completion and problem solving</h3>
-                <div class="certificate">
-                    <img src="https://i.imgur.com/nY3UxIU.jpeg" alt="Development & Advanced
-                    Engineering Job Simulation">
-                    <div class="certificate-info">
-                        <h4><i class="fas fa-medal"></i> DEVELOPMENT AND ADVANCED ENGINEERING</h4>
-                        <p>Awarded for completing and soving a challenge in Object-Oriented Programming (OOP), Code Refactoring, Continuous Integration (CI), and
-                            Agile Planning, in Development & Advanced Engineering Job Simulation </p>
-                    </div>
-                </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Clean Water for All</h1>
+            <p>We're dedicated to providing access to clean water and empowering communities to build a better future.</p>
+            <a href="#donate" class="btn btn-accent">Donate Now</a>
         </div>
     </section>
-    
-    <!-- Projects Section -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-        <div class="project">
-            <img src="https://i.imgur.com/V3t5BMn.jpg" alt="ALGFRED" class="project-img">
-            <h3>ALGFRED</h3>
-            <p>I created an ALGFRED (Automatic Length Gauging Flexible Rod Equipment Device) for my junior high school to overcome difficulties in measuring object heights. This innovative device simplifies the process, making it easier for students to accurately measure and record heights, enhancing their learning experience.</p>
-        </div>
 
-        <div class="project">
-            <img src="https://imgur.com/2oN9JVh.jpg" alt="Smoke Detector" class="project-img">
-            <h3>Smoke Detector</h3>
-            <p>I developed a project to combat frequent fire outbreaks in my community. This device ensures community safety through seamless communication using Arduino, smoke sensor, GSM, and LCD. It delivers prompt SMS notifications when detecting smoke, saving lives and preventing property damage with proven favorable consequences.</p>
+    <!-- Mission Section -->
+    <section id="mission" class="section mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission</h2>
+            </div>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>Our mission is to address the pressing issues faced by marginalized communities by providing access to clean water, thereby empowering future generations to thrive and live a better life. We envision a world where everyone has access to this fundamental human right, regardless of their background or circumstances.</p>
+                    <p>By bridging the water access gap, we aim to improve health and hygiene standards, enhance educational opportunities, support economic growth and development, and foster community resilience and social cohesion.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="https://i.imgur.com/Yu0Sr5e.jpeg" alt="Children Drinking Water">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="project">
-            <img src="https://imgur.com/OobbkJ2.jpg" alt="Automatic Water Dispenser" class="project-img">
-            <h3>Automatic Water Dispenser</h3>
-            <p>During COVID-19, I created an automated water dispenser for my school, providing a safe, touchless handwashing experience. By eliminating shared tap contact, I helped prevent virus transmission, potentially saving thousands of students' lives. Observing shared tap risks, I built this vital solution to preserve our school community's health and well-being, promoting a safer environment for all, and safeguarding against future pandemics.</p>
+    <!-- Impact Section -->
+    <section id="impact" class="section impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Impact</h2>
+            </div>
+            <div class="impact-cards">
+                <div class="impact-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Clean Water Access</h3>
+                    <p>We've provided clean drinking water to thousands of people in marginalized communities.</p>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Community Engagement</h3>
+                    <p>We empower communities with knowledge on effective water treatment solutions.</p>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Health Improvement</h3>
+                    <p>Significant reduction in waterborne diseases and improvement in overall health.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="project">
-            <img src="https://imgur.com/qffb4kG.jpg" alt="Smart Dustbin" class="project-img">
-            <h3>Smart Dustbin</h3>
-            <p>My friend and I created an automated dustbin for our community library to address littering and promote sustainability. Using sensors and motors, it opens its lid when approached, encouraging convenient disposal and a clean environment. The design has made it a favorite among students, improving library sanitation. Our project showcases cooperation and creativity in tackling real-world challenges, fostering community well-being and promoting a cleaner environment.</p>
-        </div>
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team</h2>
+            </div>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/Zyy11ol.jpeg" alt="Osei-Bonsu Cephas">
+                    </div>
+                    <div class="team-info">
+                        <h3>Osei-Bonsu Cephas</h3>
+                        <p>Founder</p>
+                        <p>Konongo Odumase SHS</p>
+                    </div>
+                </div>
 
-        <div class="project">
-            <img src="https://imgur.com/JPjf0dR.jpg" alt="Smart Door System" class="project-img">
-            <h3>Smart Door System</h3>
-            <p>I developed a smart door system using Arduino, servo motor, RFID reader, locker, and buzzer. The door opens automatically after successful RFID scanning. If an illegal attempt occurs, the system alerts with an audible alarm. I created this project to improve security, driven by my passion for invention and commitment to building a better world.</p>
-        </div>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/0nCBEYs.jpeg" alt="Obeng Manu Derrick">
+                    </div>
+                    <div class="team-info">
+                        <h3>Obeng Manu Derrick</h3>
+                        <p>Co-Founder</p>
+                        <p>Konongo Odumase SHS</p>
+                    </div>
+                </div>
 
-        <div class="project">
-            <img src="https://i.imgur.com/eqkOVzs.jpg" alt="H20HopeHorizon" class="project-img">
-            <h3>H20HopeHorizon</h3>
-            <p>As founder, I address marginalized communities' pressing issues by providing clean water access. We empower future generations, improving health, hygiene, education, and economic growth. Our vision: a world where everyone has clean water access, regardless of background.</p>
-        </div>
-    </div>
-</section>
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/2KjlTkO.jpeg" alt="Nimako Boadi Stephen">
+                    </div>
+                    <div class="team-info">
+                        <h3>Nimako Stephen</h3>
+                        <p>Organizer</p>
+                        <p>Konongo Odumase SHS</p>
+                    </div>
+                </div>
 
-    </div>
-    <section id="video-demonstration">
-        <h2>Video Demonstration</h2>
-        <div class="projects-container">
-            <div class="project">
-                <h3>ALGFRED</h3>
-                <div class="video-container">
-                    <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/994299968?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="ALGFRED"></iframe>
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/Td88YM5.jpeg" alt="Asare Doreen">
+                    </div>
+                    <div class="team-info">
+                        <h3>Asare-Bediako Doreen</h3>
+                        <p>Coordinator</p>
+                        <p>Konongo Odumase SHS</p>
                     </div>
                 </div>
-            </div>
-    
-            <div class="project">
-                <h3>Smoke Detector</h3>
-                <div class="video-container">
-                    <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/985361158?badge=0&autopause=0&player_id=0&app_id=58479"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Smoke Detector"></iframe>
+
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/Q070NZI.jpeg" alt="Kimens">
+                    </div>
+                    <div class="team-info">
+                        <h3>Kimens</h3>
+                        <p>Project Management</p>
+                        <p>Konongo Odumase SHS</p>
                     </div>
                 </div>
-            </div>
-    
-            <div class="project">
-                <h3>Automatic Water Dispenser</h3>
-                <div class="video-container">
-                    <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/1009156595?badge=0&autopause=0&player_id=0&app_id=58479"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Smart Dustbin"></iframe>
+
+                <!-- Team Member 6 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/wAfIAOS.jpeg" alt="Team Members">
+                    </div>
+                    <div class="team-info">
+                        <h3>Catherine</h3>
+                        <p>Health Educator</p>
+                        <p>Aggrey Memorial SHS</p>
                     </div>
                 </div>
-            </div>
-    
-    
-            <div class="project">
-                <h3>Smart Dustbin</h3>
-                <div class="video-container">
-                    <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/994302125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Smart Dustbin"></iframe>
+
+                <!-- Team Member 7 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/rddpb5l.jpeg" alt="Team Members">
+                    </div>
+                    <div class="team-info">
+                        <h3>Mr. Prince</h3>
+                        <p>Advisor</p>
+                        <p>KNUST</p>
                     </div>
                 </div>
-            </div>
-    
-            <div class="project">
-                <h3>Smart Door System</h3>
-                <div class="video-container">
-                    <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/994304190?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Smart Door System"></iframe>
+
+                <!-- Team Member 8 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/dLcVSCn.jpg" alt="Team Members">
+                    </div>
+                    <div class="team-info">
+                        <h3>Frederick Amponsah</h3>
+                        <p>Financial</p>
+                        <p>University Of Education</p>
                     </div>
                 </div>
-            </div>
-    
-            <div class="project">
-                <h3>H20HopeHorizon</h3>
-                <div class="video-container">
-                    <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/994299968?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="H20HopeHorizon"></iframe>
+
+                <!-- Team Member 9 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://i.imgur.com/fww4WEv.jpeg" alt="Team Members">
+                    </div>
+                    <div class="team-info">
+                        <h3>Nicolina Bonsu</h3>
+                        <p>Volunteer Coordinator</p>
+                        <p>St. Louis SHS</p>
                     </div>
                 </div>
             </div>
         </div>
-        <section id="research-paper">
-            <div class="research-container">
-                <h2>Smart Shoe System for Obstacle Detection and Guidance</h2>
-                
-                <div class="abstract">
-                    <h3>Abstract</h3>
-                    <p>This research explores the design and implementation of a smart shoe system to aid visually impaired individuals by detecting obstacles using microcontrollers and sensors. The system integrates ultrasonic and infrared sensors to provide real-time feedback via Bluetooth earpieces.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What People Say About Us</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"H20HopeHorizon has made a tremendous impact in our community. Thanks to their efforts, we now have access to clean and safe water. It's life-changing!"</p>
+                    <h4>- Acheampong Godfred</h4>
                 </div>
-        
-                <div class="introduction">
-                    <h3>Introduction</h3>
-                    <p>For visually challenged people, safely navigating dynamic surroundings is rather difficult. Although they provide simple tactile input, traditional mobility aids like canes are not very good at identifying objects that are not exactly in front of the user or far away. This work presents a smart shoe system combining microcontroller technology, sensor integration, and wireless connection to deliver real-time input for obstacle identification and navigation, thereby addressing these constraints.</p>
-            <p>Along with ultrasonic and infrared (IR) sensors, the suggested smart shoe uses reasonably priced and easily available technologies such as Arduino and Raspberry Pi to provide a complete solution for safe navigation. This work aims to create a wearable device using Bluetooth earphones that improves mobility, lowers accidents, and offers an easy user experience by means of auditory signals.</p>
+                <div class="testimonial">
+                    <p>"The dedication and commitment of this organization are truly inspiring. They not only provide water but also educate us on sustainable practices."</p>
+                    <h4>- Abenaa Leticia</h4>
                 </div>
-        
-                <div class="literature-review">
-                    <p>Especially in the field of obstacle detection, wearable assistive devices have developed dramatically recently. Current options include smart glasses, wearable belts with sensors that offer tactile or aural input, and electronic canes. In complicated settings, these tools can lack comfort, simplicity of use, or accuracy, however.</p>
-                    <p>Research on low-cost, adaptable, and efficient prototypes for assistive devices has extensively embraced microcontrollers like Arduino and Raspberry Pi. For instance, ultrasonic sensors and vibration feedback systems have been used in designs for smart shoes with simple obstacle-detecting powers. These designs can lack directionality and the capacity to differentiate between different kinds of barriers, including fixed and moving items, or ground-level dangers like pits.</p>
-                    <p>By adding cutting-edge technologies such as multi-directional obstacle detection, real-time Bluetooth connection, and a decision-making algorithm to provide the user clear, practical auditory instructions, this study seeks to expand upon already existing concepts.</p>
-                    </div>
-        
-                <a href="https://www.researchgate.net/publication/383751191_Microcontroller_and_Sensor-Based_Smart_Shoe_Development_for_Obstacle_Detection_and_Guidance" target="_blank" class="research-link">
-                    Full Research Paper
-                </a>
-        
-                <div class="details">
-                    <h3>System Architecture</h3>
-                    <p>The system architecture combines various hardware and software components to deliver real-time obstacle detection and guidance.</p>
-                    <img src="https://i.imgur.com/Ij5gCns.png" alt="System Architecture Diagram" class="diagram">
-        
-                    <h3>Software Components</h3>
-                    <p>The software includes data filtering, obstacle detection algorithms, decision-making systems, and Bluetooth communication.</p>
-                    <img src="https://i.imgur.com/fOEEYLt.png" alt="Software Architecture Diagram" class="diagram">
-        
-                    <h3>Data Flow</h3>
-                    <p>The data flow consists of sensor input, data processing, decision-making, and audio output to guide the user.</p>
-                    <img src="https://i.imgur.com/SOhYm7R.png" alt="Data Flow Diagram" class="diagram">
-                </div>
-        
-                <div class="future-work">
-                    <h3>Future Work</h3>
-                    <p>Future enhancements include integrating advanced sensors, improving machine learning algorithms for better obstacle detection, and refining user interface feedback mechanisms to further improve user experience.</p>
-                </div>
-        
-                <div class="references">
-                    <h3>References</h3>
-                    <ul>
-                        <li>Chandekar, T., et al. (2017). Implementation of obstacle detection and navigation system for visually impaired using smart shoes. <i>International Research Journal of Engineering and Technology (IRJET)</i>, 4(4), pp. 2125-2129.</li>
-                        <li>Chandekar, Tejal, et al. "Implementation of obstacle detection and navigation system for visually impaired using smart shoes." <i>IRJET</i> 4.4 (2017): 2125-2129.</li>
-                        <li>Chandekar, T., Chouhan, R., Gaikwad, R., Gosavi, H., & Darade, S. (2017). Implementation of obstacle detection and navigation system for visually impaired using smart shoes. <i>IRJET</i>, 4(4), 2125-2129.</li>
-                        <li>Chandekar, T., Chouhan, R., Gaikwad, R., Gosavi, H. and Darade, S., 2017. Implementation of obstacle detection and navigation system for visually impaired using smart shoes. <i>IRJET</i>, 4(4), pp.2125-2129.</li>
-                    </ul>
+                <div class="testimonial">
+                    <p>"I am so grateful for the work H20HopeHorizon is doing. They are making a real difference in the lives of many people."</p>
+                    <h4>- Dr. Ernest Sarpong</h4>
                 </div>
             </div>
-        </section>
-        <section id="contact">
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="section donate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Support Our Cause</h2>
+            </div>
+            <div class="donate-content">
+                <p>Your donations help us continue our mission to provide clean water to those in need. Every contribution, no matter the size, makes a difference.</p>
+                <button class="btn" onclick="alert('Please send your donation via Mobile Money to +233551560593')">Donate Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section video-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Project at Sabinom Village</h2>
+            </div>
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/1024181835?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Children from Sabinom Village</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/BQnSkSB.jpeg" alt="Children from Sabinom Village">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/XXLvfzc.jpeg" alt="Children from Sabinom Village">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/ujNM8Rh.jpeg" alt="Children from Sabinom Village">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/M2KAuT3.jpeg" alt="Children from Sabinom Village">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section class="section volunteer">
+        <div class="container">
+            <div class="section-title">
+                <h2>Become a Volunteer</h2>
+            </div>
+            <form class="volunteer-form">
+                <div class="form-group">
+                    <label for="volunteer-name">Name</label>
+                    <input type="text" id="volunteer-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="volunteer-email">Email</label>
+                    <input type="email" id="volunteer-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="volunteer-message">Why do you want to volunteer?</label>
+                    <textarea id="volunteer-message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
             <div class="contact-container">
-                <h2>Contact Me</h2>
-                
-                <form action="mailto:cephasbonsuosei001@gmail.com" method="post" enctype="text/plain">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>We'd love to hear from you. Reach out to us for partnerships, questions, or to learn more about our initiatives.</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> H20HopeHorizon@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +233551560593</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Kumasi, Ghana</p>
+                    </div>
+                </div>
+                <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" class="form-control" required>
                     </div>
-        
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" class="form-control" required>
                     </div>
-        
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <textarea id="message" class="form-control" required></textarea>
                     </div>
-        
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
-        </section>
-        <footer>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
             <div class="footer-container">
-              <div class="social-media">
-                <a href="http://Wa.me/+233551560593" target="_blank" class="social-link">
-                  <img src="https://th.bing.com/th?q=Whats+App+Icon.png&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-WW&cc=GH&setlang=en&adlt=moderate&t=1&mw=247" alt="WhatsApp" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/in/cephas-bonsu-911731326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-link">
-                  <img src="https://th.bing.com/th/id/OIP.8OUQAzOlhtNkOtZIHKd_lwHaHa?w=148&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="LinkedIn" class="social-icon">
-                </a>
-                <a href="https://www.tiktok.com/@faithfulness_0551?_t=8pWjhKf4kju&_r=1" target="_blank" class="social-link">
-                  <img src="https://th.bing.com/th/id/OIP.10UYWgiyV3HSOvt-AZLl0QHaHa?rs=1&pid=ImgDetMain" alt="TikTok" class="social-icon">
-                </a>
-              </div>
-              <p>&copy; 2024 Osei-Bonsu Cephas. All Rights Reserved.</p>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>H20HopeHorizon is dedicated to providing clean water access to marginalized communities, empowering them to build a better future.</p>
+                    <div class="social-links">
+                        <a href="https://whatsapp.com/channel/0029Vah59vyIyPtapEQyF71s" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61564680485081&mibextid=kFxxJD" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> H20HopeHorizon@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +233551560593</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kumasi, Ghana</p>
+                </div>
             </div>
-          </footer>
-          
-        
-    </body>
+            <div class="footer-bottom">
+                <p>&copy; 2024 H20HopeHorizon. All rights reserved.</p>
+                <p>Designed by Cephas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handlers
+        document.querySelector('.volunteer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest in volunteering! We will contact you soon.');
+            this.reset();
+        });
+
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Simple testimonial slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.style.display = 'none');
+            testimonials[index].style.display = 'block';
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+
+        // Initialize testimonial slider
+        showTestimonial(0);
+        setInterval(nextTestimonial, 5000);
+    </script>
+</body>
 </html>
